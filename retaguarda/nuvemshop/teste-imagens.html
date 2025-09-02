@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Imagens - Nuvemshop</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .container { margin-top: 20px; }
+        pre { background-color: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto; max-height: 400px; }
+        .card-action { display: flex; justify-content: flex-end; }
+        .card-action .btn { margin-left: 10px; }
+        #loading { display: none; }
+        .json-display { font-family: 'Courier New', monospace; font-size: 12px; }
+        .success { color: #4caf50; }
+        .error { color: #f44336; }
+        .warning { color: #ff9800; }
+        .info { color: #2196f3; }
+        .image-preview { max-width: 200px; max-height: 200px; margin: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Teste de Verificação de Imagens</h3>
+        <p class="flow-text">Testar a funcionalidade de verificação de imagens para produtos</p>
+        
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Verificar Imagens de Produto</span>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="codigoGtin" type="text" placeholder="Ex: 7898933880010">
+                        <label for="codigoGtin">Código GTIN do Produto</label>
+                    </div>
+                </div>
+                
+                <p class="grey-text">Digite o código GTIN para verificar se existem imagens em /upload/</p>
+            </div>
+            
+            <div class="card-action">
+                <button id="btnVerificarImagens" class="waves-effect waves-light btn blue">
+                    <i class="material-icons left">image</i>Verificar Imagens
+                </button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Resultado</span>
+                
+                <div id="resultado">
+                    <p>Digite um código GTIN e clique em "Verificar Imagens".</p>
+                </div>
+                
+                <div id="loading" class="center-align">
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Verificando imagens...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/image-manager.js"></script>
+    
+    <script>
+        let imageManager;
+        
+        $(document).ready(function() {
+            // Inicializar o ImageManager
+            imageManager = new ImageManager({
+                debug: true
+            });
+            
+            console.log('ImageManager inicializado para teste');
+            
+            // Evento do botão verificar imagens
+            $('#btnVerificarImagens').click(async function() {
+                const codigoGtin = $('#codigoGtin').val().trim();
+                
+                if (!codigoGtin) {
+                    Materialize.toast('Por favor, informe o código GTIN', 3000, 'red');
+                    return;
+                }
+                
+                $('#loading').show();
+                $('#resultado').hide();
+                
+                try {
+                    console.log(`Iniciando verificação de imagens para: ${codigoGtin}`);
+                    
+                    // Verificar imagens usando o ImageManager
+                    const images = await imageManager.prepareImagesForApi(codigoGtin);
+                    
+                    $('#loading').hide();
+                    $('#resultado').show();
+                    
+                    let resultHtml = '<h5>Resultado da Verificação</h5>';
+                    resultHtml += `<p><strong>Código GTIN:</strong> ${codigoGtin}</p>`;
+                    resultHtml += `<p><strong>Imagens encontradas:</strong> ${images.length}</p>`;
+                    
+                    if (images.length > 0) {
+                        resultHtml += '<h6 class="success">✅ Imagens Encontradas:</h6>';
+                        
+                        images.forEach((img, index) => {
+                            resultHtml += `
+                                <div class="row">
+                                    <div class="col s12 m6">
+                                        <div class="card">
+                                            <div class="card-content">
+                                                <span class="card-title">Posição ${img.position}</span>
+                                                <p><strong>URL:</strong> ${img.src}</p>
+                                                <img src="${img.src}" class="image-preview responsive-img" 
+                                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                                                     onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+                                                <p style="display:none;" class="red-text">❌ Erro ao carregar imagem</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        resultHtml += '<h6>JSON para API:</h6>';
+                        resultHtml += `<pre class="json-display">${JSON.stringify(images, null, 2)}</pre>`;
+                    } else {
+                        resultHtml += '<h6 class="warning">⚠️ Nenhuma imagem encontrada</h6>';
+                        resultHtml += '<p>Verifique se existem arquivos com os seguintes padrões:</p>';
+                        resultHtml += '<ul>';
+                        resultHtml += `<li>${codigoGtin}.jpg, ${codigoGtin}.jpeg, ${codigoGtin}.png, ${codigoGtin}.gif, ${codigoGtin}.webp</li>`;
+                        resultHtml += `<li>${codigoGtin}_2.jpg, ${codigoGtin}_2.jpeg, etc.</li>`;
+                        resultHtml += `<li>${codigoGtin}_3.jpg, ${codigoGtin}_3.jpeg, etc.</li>`;
+                        resultHtml += `<li>${codigoGtin}_4.jpg, ${codigoGtin}_4.jpeg, etc.</li>`;
+                        resultHtml += '</ul>';
+                        resultHtml += '<p>No diretório: <strong>https://demo.gutty.app.br/upload/</strong></p>';
+                    }
+                    
+                    $('#resultado').html(resultHtml);
+                    
+                } catch (error) {
+                    $('#loading').hide();
+                    $('#resultado').show();
+                    
+                    console.error('Erro ao verificar imagens:', error);
+                    
+                    let resultHtml = '<h5 class="error">❌ Erro na Verificação</h5>';
+                    resultHtml += `<p><strong>Código GTIN:</strong> ${codigoGtin}</p>`;
+                    resultHtml += `<p class="error"><strong>Erro:</strong> ${error.message || error}</p>`;
+                    resultHtml += '<pre class="json-display">' + JSON.stringify(error, null, 2) + '</pre>';
+                    
+                    $('#resultado').html(resultHtml);
+                    
+                    Materialize.toast('Erro ao verificar imagens', 3000, 'red');
+                }
+            });
+            
+            // Permitir Enter no campo de input
+            $('#codigoGtin').keypress(function(e) {
+                if (e.which === 13) {
+                    $('#btnVerificarImagens').click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

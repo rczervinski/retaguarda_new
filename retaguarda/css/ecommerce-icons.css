@@ -1,0 +1,325 @@
+/**
+ * Estilos para ícones de e-commerce
+ * Sistema visual para identificar produtos em diferentes plataformas
+ */
+
+/* Estilos base para ícones de e-commerce */
+.ecommerce-icon {
+    font-size: 18px !important;
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: help;
+    transition: all 0.3s ease;
+}
+
+.ecommerce-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Nuvemshop - Produto Normal (sem variantes) */
+.nuvemshop-normal {
+    color: #2196F3 !important; /* Azul */
+}
+
+.nuvemshop-normal:hover {
+    color: #1976D2 !important; /* Azul mais escuro no hover */
+}
+
+/* Nuvemshop - Produto Vitrine (com múltiplas variantes) */
+.nuvemshop-vitrine {
+    color: #2E7D32 !important; /* Verde escuro */
+}
+
+.nuvemshop-vitrine:hover {
+    color: #1B5E20 !important; /* Verde ainda mais escuro no hover */
+}
+
+/* Nuvemshop - Variante de produto */
+.nuvemshop-variante {
+    color: #fffb00 !important; /* Verde claro */
+}
+
+.nuvemshop-variante:hover {
+    color: #fffb00  !important; /* Verde médio no hover */
+}
+
+/* Nuvemshop - Status antigo (compatibilidade) */
+.nuvemshop-legacy {
+    color: #757575 !important; /* Cinza */
+}
+
+.nuvemshop-legacy:hover {
+    color: #424242 !important; /* Cinza mais escuro no hover */
+}
+
+/* Futuros marketplaces */
+
+/* Mercado Livre - quando implementado */
+.mercadolivre-normal {
+    color: #FFE135 !important; /* Amarelo do ML */
+}
+
+.mercadolivre-vitrine {
+    color: #F57C00 !important; /* Laranja escuro */
+}
+
+.mercadolivre-variante {
+    color: #FFA726 !important; /* Laranja claro */
+}
+
+/* Shopee - quando implementado */
+.shopee-normal {
+    color: #EE4D2D !important; /* Laranja do Shopee */
+}
+
+.shopee-vitrine {
+    color: #C62828 !important; /* Vermelho escuro */
+}
+
+.shopee-variante {
+    color: #FF5722 !important; /* Vermelho claro */
+}
+
+/* Amazon - quando implementado */
+.amazon-normal {
+    color: #FF9900 !important; /* Laranja da Amazon */
+}
+
+.amazon-vitrine {
+    color: #E65100 !important; /* Laranja escuro */
+}
+
+.amazon-variante {
+    color: #FFB74D !important; /* Laranja claro */
+}
+
+/* Tooltips personalizados */
+.ecommerce-icon[data-tooltip] {
+    position: relative;
+}
+
+.ecommerce-icon[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+.ecommerce-icon[data-tooltip]:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.ecommerce-icon[data-tooltip]:hover:before,
+.ecommerce-icon[data-tooltip]:hover:after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .ecommerce-icon {
+        font-size: 16px !important;
+        margin-right: 3px;
+    }
+
+    .ecommerce-icon[data-tooltip]:before {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+
+/* Animação de entrada */
+@keyframes fadeInIcon {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.ecommerce-icon {
+    animation: fadeInIcon 0.3s ease-out;
+}
+
+/* Estilos para tabelas com ícones */
+table td .ecommerce-icon {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2px;
+}
+
+/* Legenda de cores (para futuro uso em modais ou páginas de ajuda) */
+.ecommerce-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 10px 0;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.ecommerce-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.ecommerce-legend-item .material-icons {
+    font-size: 18px !important;
+}
+
+/* Estilos específicos para diferentes contextos */
+
+/* Em listas de produtos */
+.product-list .ecommerce-icon {
+    margin-right: 8px;
+}
+
+/* Em cards de produtos */
+.product-card .ecommerce-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Em modais */
+.modal .ecommerce-icon {
+    margin-right: 10px;
+}
+
+/* Estados especiais */
+.ecommerce-icon.loading {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.ecommerce-icon.error {
+    color: #F44336 !important;
+}
+
+.ecommerce-icon.success {
+    color: #4CAF50 !important;
+}
+
+/* Acessibilidade */
+.ecommerce-icon:focus {
+    outline: 2px solid #2196F3;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Estilos para coluna de origem */
+.origem-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 4px;
+    text-align: center;
+}
+
+.origem-container .material-icons {
+    font-size: 20px !important;
+    margin-bottom: 2px;
+    margin-right: 0 !important;
+}
+
+.origem-container small {
+    font-size: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* Produto local - Cinza escuro */
+.local-product {
+    color: #424242 !important;
+}
+
+.local-product:hover {
+    color: #212121 !important;
+}
+
+/* Responsividade para coluna origem */
+@media (max-width: 768px) {
+    .origem-container {
+        min-height: 35px;
+        padding: 2px;
+    }
+
+    .origem-container .material-icons {
+        font-size: 18px !important;
+    }
+
+    .origem-container small {
+        font-size: 9px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .ecommerce-icon {
+        color: #000 !important;
+        font-size: 14px !important;
+    }
+
+    .ecommerce-icon[data-tooltip]:before,
+    .ecommerce-icon[data-tooltip]:after {
+        display: none !important;
+    }
+
+    .origem-container {
+        min-height: auto;
+        padding: 2px;
+    }
+
+    .origem-container .material-icons {
+        font-size: 14px !important;
+    }
+
+    .origem-container small {
+        font-size: 8px;
+    }
+}

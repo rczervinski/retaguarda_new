@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Sincronização de Imagens - Nuvemshop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .log-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .log-entry {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        
+        .log-info {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .log-success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        .log-warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .log-error {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+        
+        .image-preview {
+            margin-top: 20px;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .image-item {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .image-item img {
+            max-width: 100%;
+            max-height: 150px;
+            border-radius: 4px;
+        }
+        
+        .image-item .position {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        
+        .image-item .url {
+            font-size: 11px;
+            color: #666;
+            word-break: break-all;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Teste de Sincronização de Imagens - Nuvemshop</h1>
+        
+        <div class="form-group">
+            <label for="productId">ID do Produto na Nuvemshop:</label>
+            <input type="number" id="productId" placeholder="Ex: 123456789">
+        </div>
+        
+        <div class="form-group">
+            <label for="codigo">Código GTIN do Produto:</label>
+            <input type="text" id="codigo" placeholder="Ex: 7898933880010">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <button onclick="testImageSync()" id="testBtn">🔄 Testar Sincronização</button>
+            <button onclick="checkLocalImages()" id="checkBtn">👁️ Verificar Imagens Locais</button>
+            <button onclick="getCurrentImages()" id="getCurrentBtn">☁️ Buscar Imagens da Nuvemshop</button>
+            <button onclick="clearLog()" id="clearBtn">🗑️ Limpar Log</button>
+        </div>
+        
+        <div class="image-preview">
+            <h3>📷 Preview das Imagens</h3>
+            <div id="imageGrid" class="image-grid"></div>
+        </div>
+        
+        <div class="log-container">
+            <h3>📋 Log de Execução</h3>
+            <div id="logContainer"></div>
+        </div>
+        
+        <div id="results" class="results" style="display: none;">
+            <h3>📊 Resultados</h3>
+            <div id="resultsContent"></div>
+        </div>
+    </div>
+
+    <!-- Scripts necessários -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/image-manager.js"></script>
+    <script src="js/variant-manager.js"></script>
+    <script src="js/category-manager.js"></script>
+    <script src="js/product-updater.js"></script>
+
+    <script>
+        // Inicializar componentes
+        const imageManager = new ImageManager({ debug: true });
+        const productUpdater = new ProductUpdater({ debug: true });
+        
+        function log(message, data = null, level = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logContainer = document.getElementById('logContainer');
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${level}`;
+            
+            let logText = `[${timestamp}] ${message}`;
+            if (data) {
+                logText += `\n${JSON.stringify(data, null, 2)}`;
+            }
+            
+            logEntry.textContent = logText;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        function clearLog() {
+            document.getElementById('logContainer').innerHTML = '';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('imageGrid').innerHTML = '';
+        }
+        
+        async function checkLocalImages() {
+            const codigo = document.getElementById('codigo').value;
+            
+            if (!codigo) {
+                log('Código GTIN é obrigatório', null, 'error');
+                return;
+            }
+            
+            log('Verificando imagens locais...', { codigo });
+            
+            try {
+                const images = await imageManager.checkProductImages(codigo);
+                log('Imagens locais encontradas', images, 'success');
+                
+                displayImages(images, 'Imagens Locais');
+                
+            } catch (error) {
+                log('Erro ao verificar imagens locais', error, 'error');
+            }
+        }
+        
+        function getCurrentImages() {
+            const productId = document.getElementById('productId').value;
+            
+            if (!productId) {
+                log('ID do produto é obrigatório', null, 'error');
+                return;
+            }
+            
+            log('Buscando imagens da Nuvemshop...', { productId });
+            
+            fetch(`nuvemshop_proxy.php?operation=get_product&product_id=${productId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        log('Erro ao buscar produto', data, 'error');
+                        return;
+                    }
+                    
+                    const images = data.images || [];
+                    log('Imagens da Nuvemshop encontradas', images, 'success');
+                    
+                    displayImages(images, 'Imagens da Nuvemshop');
+                })
+                .catch(error => {
+                    log('Erro na requisição', error, 'error');
+                });
+        }
+        
+        async function testImageSync() {
+            const productId = document.getElementById('productId').value;
+            const codigo = document.getElementById('codigo').value;
+            
+            if (!productId || !codigo) {
+                log('ID do produto e código GTIN são obrigatórios', null, 'error');
+                return;
+            }
+            
+            const testBtn = document.getElementById('testBtn');
+            testBtn.disabled = true;
+            testBtn.textContent = '⏳ Sincronizando...';
+            
+            log('Iniciando teste de sincronização de imagens...', { productId, codigo });
+            
+            try {
+                // Primeiro buscar o produto atual
+                const response = await fetch(`nuvemshop_proxy.php?operation=get_product&product_id=${productId}`);
+                const currentProduct = await response.json();
+                
+                if (currentProduct.error) {
+                    log('Erro ao buscar produto atual', currentProduct, 'error');
+                    return;
+                }
+                
+                const currentImages = currentProduct.images || [];
+                log('Produto atual obtido', { images: currentImages });
+                
+                // Executar sincronização
+                await productUpdater.syncProductImages(
+                    productId,
+                    codigo,
+                    currentImages,
+                    (results) => {
+                        log('Sincronização concluída com sucesso!', results, 'success');
+                        displayResults(results);
+                    },
+                    (error) => {
+                        log('Erro na sincronização', error, 'error');
+                    }
+                );
+                
+            } catch (error) {
+                log('Erro geral no teste', error, 'error');
+            } finally {
+                testBtn.disabled = false;
+                testBtn.textContent = '🔄 Testar Sincronização';
+            }
+        }
+        
+        function displayImages(images, title) {
+            const imageGrid = document.getElementById('imageGrid');
+            imageGrid.innerHTML = `<h4>${title}</h4>`;
+            
+            if (images.length === 0) {
+                imageGrid.innerHTML += '<p>Nenhuma imagem encontrada</p>';
+                return;
+            }
+            
+            images.forEach(img => {
+                const imageItem = document.createElement('div');
+                imageItem.className = 'image-item';
+                
+                imageItem.innerHTML = `
+                    <div class="position">Posição ${img.position}</div>
+                    <img src="${img.src}" alt="Imagem ${img.position}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlbSBuw6NvIGVuY29udHJhZGE8L3RleHQ+PC9zdmc+'">
+                    <div class="url">${img.src}</div>
+                `;
+                
+                imageGrid.appendChild(imageItem);
+            });
+        }
+        
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            const resultsContent = document.getElementById('resultsContent');
+            
+            resultsContent.innerHTML = `
+                <h4>📈 Estatísticas:</h4>
+                <ul>
+                    <li><strong>Imagens adicionadas:</strong> ${results.added.length}</li>
+                    <li><strong>Imagens atualizadas:</strong> ${results.updated.length}</li>
+                    <li><strong>Imagens removidas:</strong> ${results.removed.length}</li>
+                    <li><strong>Erros:</strong> ${results.errors.length}</li>
+                </ul>
+                
+                ${results.errors.length > 0 ? `
+                    <h4>❌ Erros:</h4>
+                    <ul>
+                        ${results.errors.map(err => `<li>${err.action.type} posição ${err.action.position}: ${err.error}</li>`).join('')}
+                    </ul>
+                ` : ''}
+            `;
+            
+            resultsDiv.style.display = 'block';
+        }
+        
+        // Log inicial
+        log('Sistema de teste carregado', null, 'info');
+        log('Para testar: 1) Insira ID do produto e código GTIN, 2) Clique em "Testar Sincronização"', null, 'info');
+    </script>
+</body>
+</html>

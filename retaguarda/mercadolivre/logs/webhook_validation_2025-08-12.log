@@ -1,0 +1,699 @@
+[2025-08-12 18:08:19] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:08:19] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:08:19] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:08:19] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:08:19] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:08:22] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:09:57] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:09:57] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:09:57] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:10:06] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:10:06] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:10:06] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:12:42] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:12:42] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:12:42] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:12:49] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:13:44] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:14:06] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:14:23] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:14:23] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:14:23] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:20:22] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:20:22] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:20:22] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:20:55] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:20:55] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:20:55] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:22:05] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:22:05] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:22:05] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:22:55] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:23:25] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:23:40] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:27:18] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:27:18] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:27:18] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:28:04] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:28:04] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:28:04] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:28:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:28:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:28:51] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:28:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:28:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:28:51] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:29:06] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:29:11] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:29:43] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:29:43] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:29:43] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:31:59] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:31:59] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:31:59] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:31:59] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:32:03] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:32:03] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:32:03] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:32:03] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:32:03] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:32:03] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:32:06] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:32:06] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:32:06] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:32:06] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:32:06] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:32:06] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:32:44] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:33:07] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:33:13] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:33:13] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:33:13] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:33:16] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:33:32] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:33:32] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:33:32] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:34:33] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:34:45] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:34:55] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:34:55] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:34:55] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:34:55] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:34:56] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:34:57] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:34:57] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:34:57] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:35:01] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:35:55] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:35:55] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:35:55] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:36:17] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:36:19] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:36:19] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:36:19] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:36:30] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:36:30] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:36:30] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:36:46] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:36:46] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:36:46] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:37:59] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:37:59] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:37:59] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:38:03] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:38:03] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:38:03] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:39:17] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:39:33] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:39:33] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:39:33] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:39:58] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:40:07] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:40:37] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:40:37] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:40:37] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:40:49] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:40:49] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:40:49] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:41:08] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:41:08] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:41:08] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 18:41:09] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:41:09] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:41:09] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:41:10] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:41:12] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:42:16] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:42:16] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:42:16] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:42:46] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:43:15] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:43:15] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:43:15] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:43:30] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:43:40] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:43:40] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:43:40] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:43:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:43:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:43:51] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:44:09] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:44:09] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:44:09] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:44:26] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:44:29] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:45:04] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:45:04] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:45:04] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:45:07] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:45:40] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:45:53] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:45:53] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:45:53] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 18:46:35] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:46:35] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:46:43] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:46:49] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:46:49] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:46:49] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:46:54] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:47:07] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:47:56] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:47:56] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:47:56] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:48:45] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:48:45] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:48:45] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:48:55] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:48:55] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:48:55] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:49:33] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:49:35] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:49:38] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:49:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:49:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:49:51] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:50:46] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:50:46] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:50:46] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:51:07] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:51:07] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:51:07] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:51:14] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:51:14] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:51:14] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:51:27] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:51:27] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:51:27] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:51:50] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:51:50] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:51:50] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:51:50] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:51:50] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:51:50] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 18:51:53] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:52:06] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:52:31] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:52:31] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:52:31] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:52:45] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:52:45] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:52:45] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:52:45] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:52:45] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:52:45] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:52:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:52:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:52:51] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 18:52:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:52:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:52:51] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 18:53:16] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:53:16] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:53:16] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:53:27] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:54:14] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:54:14] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:54:14] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 18:54:20] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:55:00] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:55:00] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:55:00] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:55:05] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:55:05] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:55:05] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:55:05] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 18:55:05] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:55:05] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:55:09] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:55:10] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:55:19] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:55:50] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:55:50] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:55:50] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:55:56] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:56:21] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:56:27] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:56:28] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:56:37] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:56:37] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:56:37] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 18:56:38] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:56:38] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:56:38] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:56:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:56:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:56:51] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:56:57] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:56:57] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:56:57] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:56:57] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 18:57:07] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:57:07] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:57:17] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:57:17] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:57:17] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 18:57:29] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:57:29] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:57:29] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:57:34] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 18:57:34] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:57:39] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:57:39] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:57:39] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 18:57:51] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:57:54] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:57:54] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:57:54] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:58:13] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:58:13] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:58:13] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:58:26] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 18:58:46] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:58:46] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:58:46] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:59:14] [ERROR] Tópico inválido: items_prices
+[2025-08-12 18:59:15] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:59:15] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:59:15] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 18:59:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:59:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:59:51] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 18:59:52] [WARNING] IP não reconhecido: ::1
+[2025-08-12 18:59:52] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 18:59:52] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 18:59:53] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:00:36] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:00:36] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:00:36] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:00:36] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:00:36] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:00:38] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:00:42] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:00:44] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:00:44] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:00:45] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:00:45] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:00:45] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 19:00:54] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:00:55] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:01:05] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:01:06] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:01:23] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:01:23] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:01:23] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:01:38] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:01:38] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:01:38] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:01:39] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:01:39] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:01:39] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:01:44] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:01:44] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:01:44] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:01:44] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:01:44] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:01:44] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:01:49] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:01:49] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:01:49] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:01:50] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:01:50] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:01:50] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:03:01] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:03:12] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:03:12] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:03:12] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:03:31] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:03:31] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:03:31] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:04:06] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:04:06] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:04:06] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:04:11] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:04:26] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:04:26] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:04:26] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:04:38] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:04:38] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:04:38] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:04:42] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:04:49] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:05:03] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:05:03] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:05:03] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:05:05] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:05:05] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:05:05] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:05:21] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:05:33] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:05:33] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:05:33] [ERROR] Resource não é uma URL válida: /items/MLB5575247296
+[2025-08-12 19:05:53] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:05:53] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:05:53] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:05:54] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:05:54] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:05:54] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:06:07] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:06:07] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:06:07] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:06:08] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:06:08] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:06:08] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:06:15] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:06:15] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:06:15] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:06:22] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:06:23] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:08:28] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:08:36] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:08:36] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:08:36] [ERROR] Resource não é uma URL válida: /items/MLB4160298129
+[2025-08-12 19:08:37] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:08:37] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:08:38] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:08:41] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:08:42] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:08:43] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:09:23] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:09:26] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:09:26] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:09:26] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:09:30] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:10:43] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:10:45] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:10:59] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:10:59] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:10:59] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:11:05] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:11:22] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:11:22] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:11:22] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:11:41] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:11:41] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:11:41] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:11:41] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:11:41] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:11:41] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:11:42] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:11:42] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:11:42] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:11:43] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:11:43] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:11:43] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:11:59] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:11:59] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:11:59] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-12 19:11:59] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:12:01] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:12:01] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:12:02] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:02] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:02] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:12:05] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:12:09] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:09] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:09] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:12:41] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:41] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:41] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:12:47] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:47] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:47] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:12:49] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:49] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:49] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:12:49] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:49] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:49] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:12:49] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:49] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:49] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:12:53] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:12:53] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:12:53] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:12:58] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:13:05] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:13:05] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:13:05] [ERROR] Resource não é uma URL válida: /items/MLB4160298129
+[2025-08-12 19:13:07] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:13:07] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:13:07] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:13:30] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:13:35] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:13:35] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:13:35] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:13:48] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:14:02] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:14:09] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:14:09] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:14:09] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:14:11] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:14:11] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:14:11] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:14:11] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:14:12] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:14:15] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:14:48] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:14:48] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:14:48] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:15:18] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:15:45] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:15:46] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:15:46] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:15:46] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:15:49] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:15:49] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:15:49] [ERROR] Resource não é uma URL válida: /items/MLB5575284552
+[2025-08-12 19:15:50] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:15:50] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:15:50] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:16:10] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:16:10] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:16:10] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:16:11] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:16:11] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:16:11] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:16:11] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:16:11] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:16:11] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:16:11] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:16:22] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:16:26] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:16:26] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:16:26] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-12 19:16:40] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:16:54] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:16:55] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:17:05] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:17:05] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:17:05] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:17:05] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:17:08] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:17:08] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:17:08] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:17:12] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:17:25] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:17:26] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:17:31] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:17:31] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:17:31] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:17:58] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:17:58] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:18:14] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:18:14] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:18:14] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:18:14] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:18:37] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:18:38] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:19:00] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:19:00] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:19:00] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:19:07] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:19:08] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:19:13] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:19:13] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:19:13] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:19:41] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:19:41] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:19:41] [ERROR] Resource não é uma URL válida: /items/MLB4160298129
+[2025-08-12 19:19:48] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:19:48] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:19:48] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:20:22] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:20:22] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:20:22] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:20:22] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:20:22] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:20:22] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:20:22] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:21:02] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:21:02] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:21:02] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:21:06] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:21:06] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:21:06] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:21:19] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:21:19] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:21:19] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:21:27] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:21:27] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:21:27] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:21:47] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:22:12] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:22:12] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:22:12] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:22:23] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:22:23] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:22:23] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:22:23] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:22:25] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:22:25] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:22:25] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:23:11] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:23:19] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:23:22] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:23:22] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:23:22] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-12 19:23:41] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:23:51] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:23:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:23:51] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:24:06] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:24:06] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:24:06] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:24:09] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:24:09] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:24:09] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:24:13] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:24:13] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:24:13] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:24:40] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:24:40] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:24:40] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:25:08] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:25:51] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:26:11] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:26:23] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:26:23] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:26:23] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:26:28] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:26:32] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:26:32] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:26:32] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:27:25] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:27:27] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:27:27] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:27:27] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:27:27] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:27:27] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:27:27] [ERROR] Resource não é uma URL válida: /items/MLB4160298129
+[2025-08-12 19:27:42] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:28:18] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:28:23] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:28:23] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:28:23] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:28:25] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:28:25] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:28:25] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:28:28] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:28:28] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:28:28] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:28:40] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:29:08] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:29:08] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:29:08] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:29:08] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:29:18] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:30:02] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:30:02] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:30:02] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:30:11] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:30:15] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:30:35] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:30:35] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:30:35] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:30:40] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:30:40] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:30:40] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:30:41] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:30:42] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:30:42] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:30:42] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:30:45] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:30:45] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:30:45] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-12 19:31:03] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:31:36] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:32:10] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:32:31] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:32:31] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:32:31] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:33:34] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:33:48] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:33:48] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:33:48] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:34:19] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:34:20] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:35:15] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:35:15] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:35:15] [ERROR] Resource não é uma URL válida: /items/MLB4160298129
+[2025-08-12 19:35:18] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:36:28] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:37:05] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:37:11] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:37:17] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:37:53] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:38:01] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:38:28] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:38:28] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:38:28] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-12 19:38:39] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:38:47] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:38:47] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:38:47] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:38:47] [ERROR] Resource não é uma URL válida: /items/MLB4160366785
+[2025-08-12 19:38:48] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:38:48] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:38:48] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-12 19:39:07] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:39:09] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:39:09] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:39:09] [ERROR] Resource não é uma URL válida: /items/MLB4160207263
+[2025-08-12 19:39:09] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:39:09] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:39:09] [ERROR] Resource não é uma URL válida: /items/MLB4160257581
+[2025-08-12 19:39:29] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:39:29] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:39:29] [ERROR] Resource não é uma URL válida: /items/MLB5575339062
+[2025-08-12 19:39:54] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:40:01] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:40:02] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:40:02] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:40:02] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:40:17] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:40:17] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:40:17] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:41:06] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:41:47] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:41:55] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:41:55] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:41:55] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:41:58] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:42:32] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:43:52] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:45:01] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:45:12] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:45:21] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:45:51] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:46:27] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:48:21] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:49:02] [WARNING] IP não reconhecido: ::1
+[2025-08-12 19:49:02] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-12 19:49:02] [ERROR] Resource não é uma URL válida: /items/MLB4159158979
+[2025-08-12 19:49:10] [ERROR] Tópico inválido: items_prices
+[2025-08-12 19:49:52] [ERROR] Tópico inválido: stock-locations
+[2025-08-12 19:51:13] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:51:43] [ERROR] Tópico inválido: user-products-families
+[2025-08-12 19:54:09] [ERROR] Tópico inválido: stock-locations

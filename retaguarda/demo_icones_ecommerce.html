@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Ícones de E-commerce</title>
+    
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- CSS dos ícones de e-commerce -->
+    <link rel="stylesheet" href="css/ecommerce-icons.css">
+    
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .demo-section {
+            margin: 30px 0;
+        }
+        .demo-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .demo-table th {
+            background: #2196F3;
+            color: white;
+            font-weight: 500;
+        }
+        .demo-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .demo-table tr:last-child td {
+            border-bottom: none;
+        }
+        .status-description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .legend-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .legend-item .material-icons {
+            margin-right: 15px;
+        }
+        .legend-text {
+            flex: 1;
+        }
+        .legend-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .legend-desc {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h3 class="center-align">
+                    <i class="material-icons left">cloud</i>
+                    Sistema de Ícones E-commerce
+                </h3>
+                <p class="center-align grey-text">
+                    Demonstração visual dos ícones para identificar produtos em diferentes plataformas
+                </p>
+            </div>
+        </div>
+
+        <!-- Legenda -->
+        <div class="demo-section">
+            <h5><i class="material-icons left">info</i>Legenda de Status</h5>
+            <div class="legend-card">
+                <div class="legend-item">
+                    <i class="material-icons ecommerce-icon nuvemshop-normal">cloud</i>
+                    <div class="legend-text">
+                        <div class="legend-title">ENS - Produto Normal</div>
+                        <div class="legend-desc">Produto simples na Nuvemshop (sem variantes)</div>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <i class="material-icons ecommerce-icon nuvemshop-vitrine">cloud</i>
+                    <div class="legend-text">
+                        <div class="legend-title">ENSVI - Produto Vitrine</div>
+                        <div class="legend-desc">Produto principal com múltiplas variantes na Nuvemshop</div>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <i class="material-icons ecommerce-icon nuvemshop-variante">cloud</i>
+                    <div class="legend-text">
+                        <div class="legend-title">ENSV - Variante</div>
+                        <div class="legend-desc">Variante específica de um produto na Nuvemshop</div>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <i class="material-icons ecommerce-icon nuvemshop-legacy">cloud</i>
+                    <div class="legend-text">
+                        <div class="legend-title">E - Status Antigo</div>
+                        <div class="legend-desc">Produto na Nuvemshop (compatibilidade com sistema antigo)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulação da Tabela de Produtos -->
+        <div class="demo-section">
+            <h5><i class="material-icons left">table_chart</i>Exemplo na Tabela de Produtos</h5>
+            <table class="demo-table">
+                <thead>
+                    <tr>
+                        <th>E-commerce</th>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="prod_1" />
+                            <label for="prod_1"></label>
+                        </td>
+                        <td>7898933880010</td>
+                        <td>
+                            <i class="material-icons ecommerce-icon nuvemshop-vitrine" 
+                               title="Nuvemshop - Produto Vitrine" 
+                               data-tooltip="Produto vitrine na Nuvemshop (com múltiplas variantes)">cloud</i>
+                            Camiseta Básica
+                            <div class="status-description">Produto vitrine com variantes P, M, G</div>
+                        </td>
+                        <td>
+                            <a class="btn-floating btn-small waves-effect grey">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="prod_2" />
+                            <label for="prod_2"></label>
+                        </td>
+                        <td>7898933880010-P</td>
+                        <td>
+                            <i class="material-icons ecommerce-icon nuvemshop-variante" 
+                               title="Nuvemshop - Variante" 
+                               data-tooltip="Variante de produto na Nuvemshop">cloud</i>
+                            Camiseta Básica P
+                            <div class="status-description">Variante tamanho P</div>
+                        </td>
+                        <td>
+                            <a class="btn-floating btn-small waves-effect grey">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="prod_3" />
+                            <label for="prod_3"></label>
+                        </td>
+                        <td>7898933880010-M</td>
+                        <td>
+                            <i class="material-icons ecommerce-icon nuvemshop-variante" 
+                               title="Nuvemshop - Variante" 
+                               data-tooltip="Variante de produto na Nuvemshop">cloud</i>
+                            Camiseta Básica M
+                            <div class="status-description">Variante tamanho M</div>
+                        </td>
+                        <td>
+                            <a class="btn-floating btn-small waves-effect grey">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="prod_4" />
+                            <label for="prod_4"></label>
+                        </td>
+                        <td>1234567890123</td>
+                        <td>
+                            <i class="material-icons ecommerce-icon nuvemshop-normal" 
+                               title="Nuvemshop - Produto Normal" 
+                               data-tooltip="Produto disponível na Nuvemshop (sem variantes)">cloud</i>
+                            Produto Simples
+                            <div class="status-description">Produto sem variantes</div>
+                        </td>
+                        <td>
+                            <a class="btn-floating btn-small waves-effect grey">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="prod_5" />
+                            <label for="prod_5"></label>
+                        </td>
+                        <td>9876543210987</td>
+                        <td>
+                            <i class="material-icons ecommerce-icon nuvemshop-legacy" 
+                               title="Nuvemshop - Status Antigo" 
+                               data-tooltip="Produto na Nuvemshop (status antigo)">cloud</i>
+                            Produto Antigo
+                            <div class="status-description">Status de compatibilidade</div>
+                        </td>
+                        <td>
+                            <a class="btn-floating btn-small waves-effect grey">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Futuros Marketplaces -->
+        <div class="demo-section">
+            <h5><i class="material-icons left">store</i>Futuros Marketplaces</h5>
+            <div class="legend-card">
+                <p class="grey-text">Ícones preparados para futuras integrações:</p>
+                
+                <div class="legend-item">
+                    <i class="material-icons ecommerce-icon mercadolivre-normal">cloud</i>
+                    <div class="legend-text">
+                        <div class="legend-title">Mercado Livre</div>
+                        <div class="legend-desc">Amarelo para produtos normais, laranja para vitrine/variantes</div>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <i class="material-icons ecommerce-icon shopee-normal">cloud</i>
+                    <div class="legend-text">
+                        <div class="legend-title">Shopee</div>
+                        <div class="legend-desc">Laranja para produtos normais, vermelho para vitrine/variantes</div>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <i class="material-icons ecommerce-icon amazon-normal">cloud</i>
+                    <div class="legend-text">
+                        <div class="legend-title">Amazon</div>
+                        <div class="legend-desc">Laranja da Amazon para produtos normais, tons mais escuros para vitrine/variantes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instruções -->
+        <div class="demo-section">
+            <div class="card blue lighten-5">
+                <div class="card-content">
+                    <span class="card-title blue-text">
+                        <i class="material-icons left">lightbulb_outline</i>
+                        Como Usar
+                    </span>
+                    <ul class="collection">
+                        <li class="collection-item">
+                            <strong>Passe o mouse</strong> sobre os ícones para ver tooltips explicativos
+                        </li>
+                        <li class="collection-item">
+                            <strong>Cores diferentes</strong> identificam o tipo de produto e marketplace
+                        </li>
+                        <li class="collection-item">
+                            <strong>Ícone de nuvem</strong> representa produtos online em qualquer plataforma
+                        </li>
+                        <li class="collection-item">
+                            <strong>Sistema escalável</strong> para adicionar novos marketplaces no futuro
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+        // Adicionar função gerarIconeEcommerce para demonstração
+        function gerarIconeEcommerce(status) {
+            if (!status) return "";
+            
+            var iconeHtml = "";
+            
+            switch (status) {
+                case 'ENS':
+                    iconeHtml = "<i class='material-icons ecommerce-icon nuvemshop-normal' " +
+                        "title='Nuvemshop - Produto Normal' " +
+                        "data-tooltip='Produto disponível na Nuvemshop (sem variantes)'>cloud</i> ";
+                    break;
+                    
+                case 'ENSVI':
+                    iconeHtml = "<i class='material-icons ecommerce-icon nuvemshop-vitrine' " +
+                        "title='Nuvemshop - Produto Vitrine' " +
+                        "data-tooltip='Produto vitrine na Nuvemshop (com múltiplas variantes)'>cloud</i> ";
+                    break;
+                    
+                case 'ENSV':
+                    iconeHtml = "<i class='material-icons ecommerce-icon nuvemshop-variante' " +
+                        "title='Nuvemshop - Variante' " +
+                        "data-tooltip='Variante de produto na Nuvemshop'>cloud</i> ";
+                    break;
+                    
+                case 'E':
+                    iconeHtml = "<i class='material-icons ecommerce-icon nuvemshop-legacy' " +
+                        "title='Nuvemshop - Status Antigo' " +
+                        "data-tooltip='Produto na Nuvemshop (status antigo)'>cloud</i> ";
+                    break;
+                    
+                default:
+                    return "";
+            }
+            
+            return iconeHtml;
+        }
+        
+        // Demonstrar a função em ação
+        $(document).ready(function() {
+            console.log('Demo dos ícones de e-commerce carregada!');
+            console.log('Função gerarIconeEcommerce disponível para teste');
+            
+            // Exemplo de uso
+            console.log('ENS:', gerarIconeEcommerce('ENS'));
+            console.log('ENSVI:', gerarIconeEcommerce('ENSVI'));
+            console.log('ENSV:', gerarIconeEcommerce('ENSV'));
+            console.log('E:', gerarIconeEcommerce('E'));
+        });
+    </script>
+</body>
+</html>

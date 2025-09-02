@@ -1,0 +1,36 @@
+[2025-08-14 00:18:16] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:18:16] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:18:16] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-14 00:20:07] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:20:07] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:20:07] [ERROR] Resource não é uma URL válida: /items/MLB4160298129
+[2025-08-14 00:26:19] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:26:19] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:26:19] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-14 00:26:51] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:26:51] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:26:51] [ERROR] Resource não é uma URL válida: /items/MLB4160395227
+[2025-08-14 00:27:43] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:27:43] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:27:43] [ERROR] Resource não é uma URL válida: /items/MLB4160298129
+[2025-08-14 00:31:01] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:31:01] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:31:01] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-14 00:39:43] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:39:43] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:39:43] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-14 00:48:07] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:48:07] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:48:07] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-14 00:56:28] [WARNING] IP não reconhecido: ::1
+[2025-08-14 00:56:28] [WARNING] User-Agent não reconhecido: github.com/go-loco/restful
+[2025-08-14 00:56:28] [ERROR] Resource não é uma URL válida: /items/MLB4160344853
+[2025-08-14 03:28:32] [ERROR] Tópico inválido: payments
+[2025-08-14 03:39:05] [ERROR] Tópico inválido: payments
+[2025-08-14 03:49:19] [ERROR] Tópico inválido: payments
+[2025-08-14 03:51:24] [ERROR] Tópico inválido: payments
+[2025-08-14 03:55:32] [ERROR] Tópico inválido: payments
+[2025-08-14 03:59:56] [ERROR] Tópico inválido: payments
+[2025-08-14 04:06:55] [ERROR] Tópico inválido: payments
+[2025-08-14 04:17:45] [ERROR] Tópico inválido: payments
+[2025-08-14 04:29:02] [ERROR] Tópico inválido: payments

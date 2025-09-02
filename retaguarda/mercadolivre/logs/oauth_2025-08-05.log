@@ -1,0 +1,77 @@
+[2025-08-05 20:30:37] [INFO] Callback OAuth recebido | Data: {"code":"TG-68924dcb2baa5c0001a2e47d-672292267","state":"zll35fuqrvi0941altjd8"}
+[2025-08-05 20:30:37] [INFO] Código de autorização recebido | Data: {"code":"TG-68924dc...","state":"zll35fuqrvi0941altjd8"}
+[2025-08-05 20:30:37] [DEBUG] Solicitando token de acesso
+[2025-08-05 20:30:39] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"the redirect_uri does not match the original","error":"invalid_grant","status":400,"cause":[]}}
+[2025-08-05 20:30:39] [ERROR] Erro ao obter token: invalid_grant - the redirect_uri does not match the original
+[2025-08-05 20:31:16] [INFO] Callback OAuth recebido | Data: {"code":"TG-68924df2334136000128166a-672292267","state":"1woyjj4z0t756y0tuyvw73"}
+[2025-08-05 20:31:16] [INFO] Código de autorização recebido | Data: {"code":"TG-68924df...","state":"1woyjj4z0t756y0tuyvw73"}
+[2025-08-05 20:31:16] [DEBUG] Solicitando token de acesso
+[2025-08-05 20:31:17] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"the redirect_uri does not match the original","error":"invalid_grant","status":400,"cause":[]}}
+[2025-08-05 20:31:17] [ERROR] Erro ao obter token: invalid_grant - the redirect_uri does not match the original
+[2025-08-05 20:31:37] [INFO] Callback OAuth recebido | Data: {"code":"TG-68924e0773253a000165a650-672292267","state":"1woyjj4z0t756y0tuyvw73"}
+[2025-08-05 20:31:37] [INFO] Código de autorização recebido | Data: {"code":"TG-68924e0...","state":"1woyjj4z0t756y0tuyvw73"}
+[2025-08-05 20:31:37] [DEBUG] Solicitando token de acesso
+[2025-08-05 20:31:38] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"the redirect_uri does not match the original","error":"invalid_grant","status":400,"cause":[]}}
+[2025-08-05 20:31:38] [ERROR] Erro ao obter token: invalid_grant - the redirect_uri does not match the original
+[2025-08-05 20:32:11] [INFO] Callback OAuth recebido | Data: {"code":"TG-68924e290b57ea000166135d-672292267","state":"ny4tb50ryt9g5f6hxkew9e"}
+[2025-08-05 20:32:11] [INFO] Código de autorização recebido | Data: {"code":"TG-68924e2...","state":"ny4tb50ryt9g5f6hxkew9e"}
+[2025-08-05 20:32:11] [DEBUG] Solicitando token de acesso
+[2025-08-05 20:32:11] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"the redirect_uri does not match the original","error":"invalid_grant","status":400,"cause":[]}}
+[2025-08-05 20:32:11] [ERROR] Erro ao obter token: invalid_grant - the redirect_uri does not match the original
+[2025-08-05 20:32:37] [INFO] Callback OAuth recebido | Data: {"code":"TG-68924e43cc91950001758dfa-672292267","state":"1woyjj4z0t756y0tuyvw73"}
+[2025-08-05 20:32:37] [INFO] Código de autorização recebido | Data: {"code":"TG-68924e4...","state":"1woyjj4z0t756y0tuyvw73"}
+[2025-08-05 20:32:37] [DEBUG] Solicitando token de acesso
+[2025-08-05 20:32:37] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"the redirect_uri does not match the original","error":"invalid_grant","status":400,"cause":[]}}
+[2025-08-05 20:32:37] [ERROR] Erro ao obter token: invalid_grant - the redirect_uri does not match the original
+[2025-08-05 20:36:39] [INFO] Callback OAuth recebido | Data: {"code":"TG-68924f353c23c40001f58d83-672292267","state":"c5n7z19zk9d0x9cz4kp9ua"}
+[2025-08-05 20:36:39] [INFO] Código de autorização recebido | Data: {"code":"TG-68924f3...","state":"c5n7z19zk9d0x9cz4kp9ua"}
+[2025-08-05 20:36:39] [DEBUG] Solicitando token de acesso
+[2025-08-05 20:36:40] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"the redirect_uri does not match the original","error":"invalid_grant","status":400,"cause":[]}}
+[2025-08-05 20:36:40] [ERROR] Erro ao obter token: invalid_grant - the redirect_uri does not match the original
+[2025-08-05 20:37:35] [INFO] Callback OAuth recebido | Data: {"code":"TG-68924f6d0b57ea0001661f84-672292267","state":"c5n7z19zk9d0x9cz4kp9ua"}
+[2025-08-05 20:37:35] [INFO] Código de autorização recebido | Data: {"code":"TG-68924f6...","state":"c5n7z19zk9d0x9cz4kp9ua"}
+[2025-08-05 20:37:36] [DEBUG] Solicitando token de acesso
+[2025-08-05 20:37:36] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"the redirect_uri does not match the original","error":"invalid_grant","status":400,"cause":[]}}
+[2025-08-05 20:37:36] [ERROR] Erro ao obter token: invalid_grant - the redirect_uri does not match the original
+[2025-08-05 20:42:51] [INFO] Callback OAuth recebido | Data: {"code":"TG-689250a9940c2b0001f2b823-672292267","state":"kvqcnzecxhyhas3g5yob"}
+[2025-08-05 20:42:51] [INFO] Código de autorização recebido | Data: {"code":"TG-689250a...","state":"kvqcnzecxhyhas3g5yob"}
+[2025-08-05 20:42:51] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/37297414505f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-05 20:42:52] [DEBUG] Resposta da API de token | Data: {"http_code":200,"response":{"access_token":"APP_USR-5844322531555319-080514-6f1fcaf3a4a54d9e1f86d05e0b1888da-672292267","token_type":"Bearer","expires_in":21600,"scope":"offline_access read urn:global:admin:users:\/read-only urn:global:admin:users:\/read-write urn:ml:vis:comunication:\/read-write urn:ml:vis:publish-sync:\/read-write write","user_id":672292267,"refresh_token":"TG-689250ab50ec95000199be34-672292267"}}
+[2025-08-05 20:42:52] [INFO] Token obtido com sucesso | Data: {"user_id":672292267,"expires_in":21600,"has_refresh_token":true}
+[2025-08-05 20:42:52] [INFO] Token salvo no banco com sucesso
+[2025-08-05 20:42:52] [INFO] Token validado com sucesso | Data: {"user_nickname":"SR20241007151544","user_email":"ondydept@gmail.com"}
+[2025-08-05 20:42:52] [INFO] Dados do usuário obtidos | Data: {"nickname":"SR20241007151544","email":"ondydept@gmail.com"}
+[2025-08-05 20:46:53] [INFO] Callback OAuth recebido | Data: {"code":"TG-6892519a73253a000165ca10-672292267","state":"mfi9ctnewulc9xwv0ex7uo"}
+[2025-08-05 20:46:53] [INFO] Código de autorização recebido | Data: {"code":"TG-6892519...","state":"mfi9ctnewulc9xwv0ex7uo"}
+[2025-08-05 20:46:53] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/37297414505f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-05 20:46:54] [DEBUG] Resposta da API de token | Data: {"http_code":200,"response":{"access_token":"APP_USR-5844322531555319-080514-8c9e9c39d41e242a4730d1a44ba8b9dc-672292267","token_type":"Bearer","expires_in":21600,"scope":"offline_access read urn:global:admin:users:\/read-only urn:global:admin:users:\/read-write urn:ml:vis:comunication:\/read-write urn:ml:vis:publish-sync:\/read-write write","user_id":672292267,"refresh_token":"TG-6892519d1b14710001835327-672292267"}}
+[2025-08-05 20:46:54] [INFO] Token obtido com sucesso | Data: {"user_id":672292267,"expires_in":21600,"has_refresh_token":true}
+[2025-08-05 20:46:54] [INFO] Token salvo no banco com sucesso
+[2025-08-05 20:46:54] [INFO] Token validado com sucesso | Data: {"user_nickname":"SR20241007151544","user_email":"ondydept@gmail.com"}
+[2025-08-05 20:46:54] [INFO] Dados do usuário obtidos | Data: {"nickname":"SR20241007151544","email":"ondydept@gmail.com"}
+[2025-08-05 20:55:18] [INFO] Callback OAuth recebido | Data: {"code":"TG-68925394eac1890001f506c6-672292267","state":"o1qze11n38iuwilsv92cyd"}
+[2025-08-05 20:55:18] [INFO] Código de autorização recebido | Data: {"code":"TG-6892539...","state":"o1qze11n38iuwilsv92cyd"}
+[2025-08-05 20:55:18] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/37297414505f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-05 20:55:19] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"invalid client_id or client_secret","error":"invalid_client","status":400,"cause":[]}}
+[2025-08-05 20:55:19] [ERROR] Erro ao obter token: invalid_client - invalid client_id or client_secret
+[2025-08-05 20:55:29] [INFO] Callback OAuth recebido | Data: {"code":"TG-68925394eac1890001f506c6-672292267","state":"o1qze11n38iuwilsv92cyd"}
+[2025-08-05 20:55:29] [INFO] Código de autorização recebido | Data: {"code":"TG-6892539...","state":"o1qze11n38iuwilsv92cyd"}
+[2025-08-05 20:55:29] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/37297414505f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-05 20:55:30] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"invalid client_id or client_secret","error":"invalid_client","status":400,"cause":[]}}
+[2025-08-05 20:55:30] [ERROR] Erro ao obter token: invalid_client - invalid client_id or client_secret
+[2025-08-05 20:55:46] [INFO] Callback OAuth recebido | Data: {"code":"TG-689253b0cc9195000175c8b4-672292267","state":"o1qze11n38iuwilsv92cyd"}
+[2025-08-05 20:55:46] [INFO] Código de autorização recebido | Data: {"code":"TG-689253b...","state":"o1qze11n38iuwilsv92cyd"}
+[2025-08-05 20:55:46] [ERROR] Configurações da aplicação não encontradas
+[2025-08-05 20:56:50] [INFO] Callback OAuth recebido | Data: {"code":"TG-689253ef8ef19100012fe09d-672292267","state":"32vvbn1ihvlcboxrih9d6t"}
+[2025-08-05 20:56:50] [INFO] Código de autorização recebido | Data: {"code":"TG-689253e...","state":"32vvbn1ihvlcboxrih9d6t"}
+[2025-08-05 20:56:50] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/37297414505f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-05 20:56:51] [DEBUG] Resposta da API de token | Data: {"http_code":400,"response":{"error_description":"invalid client_id or client_secret","error":"invalid_client","status":400,"cause":[]}}
+[2025-08-05 20:56:51] [ERROR] Erro ao obter token: invalid_client - invalid client_id or client_secret
+[2025-08-05 20:57:34] [INFO] Callback OAuth recebido | Data: {"code":"TG-6892541b33413600012858d8-672292267","state":"8cvddldg1g6vzz2nl7kon"}
+[2025-08-05 20:57:34] [INFO] Código de autorização recebido | Data: {"code":"TG-6892541...","state":"8cvddldg1g6vzz2nl7kon"}
+[2025-08-05 20:57:34] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/37297414505f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-05 20:57:34] [DEBUG] Resposta da API de token | Data: {"http_code":200,"response":{"access_token":"APP_USR-5844322531555319-080514-3fa34c8509c67ae93fb924d260133607-672292267","token_type":"Bearer","expires_in":21600,"scope":"offline_access read urn:global:admin:users:\/read-only urn:global:admin:users:\/read-write urn:ml:vis:comunication:\/read-write urn:ml:vis:publish-sync:\/read-write write","user_id":672292267,"refresh_token":"TG-6892541d6dfc660001b6ab35-672292267"}}
+[2025-08-05 20:57:34] [INFO] Token obtido com sucesso | Data: {"user_id":672292267,"expires_in":21600,"has_refresh_token":true}
+[2025-08-05 20:57:35] [INFO] Token salvo no banco com sucesso
+[2025-08-05 20:57:35] [INFO] Token validado com sucesso | Data: {"user_nickname":"SR20241007151544","user_email":"ondydept@gmail.com"}
+[2025-08-05 20:57:35] [INFO] Dados do usuário obtidos | Data: {"nickname":"SR20241007151544","email":"ondydept@gmail.com"}

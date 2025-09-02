@@ -1,0 +1,282 @@
+/* Estilos para o Modal de Filtros Avançados */
+
+#modalFiltros {
+    border-radius: 8px;
+}
+
+#modalFiltros .modal-content {
+    padding: 24px;
+}
+
+
+/* Estilos para as seções de filtros */
+#modalFiltros .card {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#modalFiltros .card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+#modalFiltros .card-content {
+    border-radius: 6px;
+}
+
+
+
+#modalFiltros .col.s12.m6.l3 span {
+    color: #505050 !important;
+}
+
+
+#modalFiltros .col.s12.m6.l3:hover span {
+    color: #000000 !important;
+}
+
+
+
+/* Títulos das seções */
+#modalFiltros h6 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#modalFiltros h6 i {
+    margin-right: 8px;
+}
+
+/* Checkboxes personalizados */
+#modalFiltros input[type="checkbox"] + span {
+    font-size: 14px;
+    color: #424242;
+    font-weight: 500;
+}
+
+#modalFiltros input[type="checkbox"]:checked + span {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+#modalFiltros .row label {
+    cursor: pointer;
+}
+
+/* Selects personalizados */
+#modalFiltros select {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#modalFiltros select:focus {
+    border-color: #1976d2;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Subseção Nuvemshop */
+#nuvemshop_subsecao {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+#nuvemshop_subsecao h6 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Botões do modal */
+#modalFiltros .modal-footer a {
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: 500;
+    text-transform: none;
+    color: #000000 !important;
+    justify-content: center;
+}
+#modalFiltros #limpar-filtros {
+    background-color: #cf3a3a !important;
+    color: #ffffff !important;
+  }
+
+#modalFiltros #aplicar-filtros {
+    background-color: #fbd84b !important;
+    color: #ffffff !important;
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+  
+#modalFiltros #limpar-filtros:hover {
+  background-color: #f50000 !important;
+}
+#modalFiltros #aplicar-filtros:hover {
+    background-color: #ffea00 !important;
+  }
+/* Botão de filtro na barra de pesquisa */
+.filter-button {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.filter-button.orange {
+    background-color: #ff9800 !important;
+}
+
+.filter-button.orange:hover {
+    background-color: #f57c00 !important;
+}
+
+/* Indicador de filtros ativos */
+.filter-button::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-button.orange::after {
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #modalFiltros {
+        width: 95% !important;
+        max-width: none !important;
+    }
+    
+    #modalFiltros .modal-content {
+        padding: 16px;
+    }
+    
+    #modalFiltros .card-content {
+        padding: 12px;
+    }
+    
+    #modalFiltros h4 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+    
+    #modalFiltros h6 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    #modalFiltros .row .col {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #modalFiltros .modal-content {
+        padding: 12px;
+    }
+    
+    #modalFiltros .card-content {
+        padding: 10px;
+    }
+    
+    #modalFiltros h4 {
+        font-size: 1.3rem;
+    }
+    
+    #modalFiltros h6 {
+        font-size: 1rem;
+    }
+    
+    #modalFiltros input[type="checkbox"] + span {
+        font-size: 13px;
+    }
+    
+    #modalFiltros select {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+/* Animações */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#nuvemshop_subsecao {
+    animation: slideInDown 0.3s ease-out;
+}
+
+/* Estados de hover para cards */
+#modalFiltros .card {
+    cursor: default;
+}
+
+#modalFiltros .card-content:hover {
+    background-color: #fafafa;
+}
+
+/* Melhorias visuais para labels */
+#modalFiltros label.active {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Espaçamento entre elementos */
+#modalFiltros p {
+    margin: 8px 0;
+}
+
+#modalFiltros .row {
+    margin-bottom: 8px;
+}
+
+/* Cores dos ícones das seções */
+#modalFiltros .card:nth-child(1) h6 {
+    color: #1976d2; /* E-commerce - Azul */
+}
+
+#modalFiltros .card:nth-child(2) h6 {
+    color: #f57c00; /* Categorias - Laranja */
+}
+
+#modalFiltros .card:nth-child(3) h6 {
+    color: #7b1fa2; /* Produtos Locais - Roxo */
+}
+
+/* Efeito de foco nos checkboxes */
+#modalFiltros input[type="checkbox"]:focus + span {
+    text-decoration: underline;
+}
+
+/* Estilo para o título principal do modal */
+#modalFiltros h4 {
+    color: #333;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Ajustes para o ícone do título */
+#modalFiltros h4 i {
+    color: #1976d2;
+}

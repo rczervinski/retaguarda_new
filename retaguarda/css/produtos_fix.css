@@ -1,0 +1,177 @@
+/*
+ * Arquivo de correção para resolver conflitos entre produtos_style.css e produtos_table.css
+ * Este arquivo deve ser incluído após os outros dois para sobrescrever as regras conflitantes
+ */
+
+/* Corrigir conflitos de estilo para o cabeçalho da tabela */
+#userTable thead {
+    background: #f5f5f5 !important;
+    background-image: none !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    border: none !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+#userTable th {
+    background-color: #f5f5f5 !important;
+    color: #212121 !important;
+    padding: 12px 10px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remover estilos de borda arredondada que causam problemas */
+#userTable th:first-child,
+#userTable th:last-child {
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+/* Garantir que a tabela não tenha bordas laterais */
+#userTable {
+    border-collapse: collapse !important;
+    border: none !important;
+}
+
+#userTable tr {
+    border: none !important;
+}
+
+#userTable td {
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+}
+
+/* Garantir que o cabeçalho fique fixo durante a rolagem */
+.table-container {
+    overflow-y: auto !important;
+    position: relative !important;
+    max-height: 600px !important;
+}
+
+/* Melhorar a responsividade da tabela */
+@media only screen and (max-width: 992px) {
+    .table-container {
+        height: 500px !important;
+    }
+
+    #userTable {
+        box-shadow: none !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .table-container {
+        height: 450px !important;
+    }
+
+    #userTable {
+        white-space: normal !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .table-container {
+        height: 400px !important;
+    }
+
+    #userTable th,
+    #userTable td {
+        padding: 8px 6px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* Garantir que a paginação seja visível */
+.pagination li a {
+    color: #444 !important;
+    background-color: transparent !important;
+}
+
+.pagination li.active a {
+    background-color: #2196F3 !important;
+    color: #fff !important;
+}
+
+/* Corrigir problemas de layout */
+.card {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: hidden !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card .card-content {
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* Garantir que o cabeçalho fique fixo e sem bordas */
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
+
+/* Remover bordas da tabela - regra mais específica */
+#userTable,
+#userTable tr,
+#userTable td,
+#userTable th,
+#userTable thead,
+#userTable tbody {
+    border: none !important;
+}
+
+/* Forçar remoção de todas as bordas do cabeçalho */
+#userTable th:after,
+#userTable th:before {
+    display: none !important;
+    border: none !important;
+    content: none !important;
+}
+
+/* Regras específicas para remover as bordas do cabeçalho */
+#userTable th[width="50"],
+#userTable th[width="60"] {
+    border: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+/* Remover todas as bordas da tabela */
+.striped tbody tr:nth-child(odd),
+.striped tbody tr:nth-child(even) {
+    border: none !important;
+}
+
+/* Garantir que o cabeçalho fique fixo */
+.table-container {
+    overflow-y: auto !important;
+}
+
+.table-container thead {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}

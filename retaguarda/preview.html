@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GroMart - Web App E-Commerce Shop and Store Mobile Template </title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="lib/font-awesome/web-fonts-with-css/css/fontawesome-all.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+body {
+      background-color: #a10934;
+    font-family: "Poppins", sans-serif;
+    background-size: 120% auto;
+  }
+  .wrapper{
+  margin: 50px 20px 50px 0px;
+  }
+  .content-left { 
+    width: 50%;
+  float: left;}
+  .content-left .mobileframe {
+  float: left;
+  position: relative;
+  } 
+  .content-left .mobileframe,
+  .content-left .mobileframe .mobile-frame-bg {
+  width: 405px;
+  height: 793px;
+  }
+  .content-left .mobileframe .mobile-frame-bg{ 
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  background: url(img/mobilepreview.png) 0 0 no-repeat;
+  pointer-events: none;
+  background-size: 100% auto;
+  }
+  .content-left .mobileframe .preview-mobile-frame {
+  position: absolute;
+  top: 60px;
+  left: 17px;
+  background-color: #ffffff;
+  width: 369px !important;
+  overflow: hidden;
+  }
+  .content-left .mobileframe .preview-mobile-frame  #previewFrame,
+  .content-left .mobileframe .preview-mobile-frame {
+  height: 646px;
+  width: 369px;
+  }
+  .content-left .mobileframe .preview-mobile-frame  #previewFrame {
+  position: relative;
+  margin: 0px;
+  border: none;
+  background: none; 
+  overflow-y: scroll;
+  overflow-x: hidden;
+  }
+  .content-right { 
+  float: left;
+  color: #ffffff;
+  padding-left: 80px; 
+text-align: center;
+width: 50%;
+  }
+  .content-right h1 {
+    font-weight: 600;
+    margin-bottom: 0px;
+  }
+  .content-right p{
+margin-bottom: 40px;
+  }
+  .content-right .fa.fa-user-secret {
+    color: #ff6238;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="wrapper">
+        <div class="content-left">
+          <div class="mobileframe">
+            <div class="mobile-frame-bg"></div>
+            <div class="preview-mobile-frame">
+              <iframe src="index.html" class="previewFrame" id="previewFrame">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="content-right"><br><br>
+          <h1><i class="fab fa-envira" style="color: #ff8700"></i> GroMart</h1>
+          <p>GroMart - Web App E-Commerce Shop and Store Mobile Template</p>  
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- script -->
+<script src="js/jquery.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

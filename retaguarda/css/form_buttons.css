@@ -1,0 +1,77 @@
+/* Estilos para os botões de ação */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1280px; /* Mesma largura do container */
+    margin: 20px auto;
+    flex-wrap: nowrap;
+    /* Alinhamento com a tabela */
+    padding: 0; /* Remover padding */
+}
+
+.form-buttons div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+/* Botão Voltar alinhado à esquerda da tabela */
+.form-buttons div:first-child {
+    justify-content: flex-start;
+    margin-left: 0;
+}
+
+/* Botões Limpar e Gravar alinhados à direita da tabela */
+.form-buttons div:last-child {
+    justify-content: flex-end;
+    margin-right: 0;
+}
+
+.form-buttons .btn {
+    min-width: 0;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 36px;
+    line-height: 36px;
+}
+
+.form-buttons .btn i {
+    margin-right: 5px;
+}
+
+/* Ajustes responsivos para os botões */
+@media only screen and (max-width: 600px) {
+    .form-buttons .btn {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .form-buttons div {
+        gap: 8px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .form-buttons .btn {
+        padding-left: 40px;
+        padding-right: 40px;
+        width: auto;
+    }
+
+    .form-buttons div {
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .form-buttons .btn {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}

@@ -1,0 +1,220 @@
+/* Estilos para corrigir problemas de sobreposição do cabeçalho da tabela */
+
+/* Configurações básicas da tabela */
+.table-container {
+    height: 600px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    position: relative; /* Importante para conter o cabeçalho */
+}
+
+.table-container table {
+    width: 100%;
+}
+
+/* Garantir que o cabeçalho da tabela não sobreponha outros elementos */
+.table-container thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1 !important; /* Forçar z-index baixo */
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.table-container th {
+    background-color: white;
+    padding: 10px;
+}
+
+/* Garantir que nada sobreponha o header da página */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Altura aproximada do header */
+    background-color: transparent;
+    z-index: 1000; /* Z-index muito alto para garantir que nada sobreponha */
+    pointer-events: none; /* Permite clicar através deste elemento */
+}
+
+/* Garantir que o header da página tenha prioridade */
+.container {
+    position: relative;
+    z-index: 2; /* Maior que o cabeçalho da tabela, menor que o body::before */
+}
+
+/* Garantir que a tabela fique abaixo do header */
+.card {
+    position: relative;
+    z-index: 1; 
+}
+
+/* Estilos para tabela responsiva com rolagem horizontal */
+@media only screen and (max-width: 990px) {
+    .table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important; 
+        white-space: nowrap !important;
+        padding-bottom: 15px !important;
+    }
+
+    /* Esconder cabeçalho original da tabela */
+    table.responsive-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    /* Configurar container para rolagem horizontal */
+    #userTable tbody {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding: 10px 0 !important;
+        -webkit-overflow-scrolling: touch !important; /* Para melhor rolagem em iOS */
+        width: max-content !important;
+        min-width: 100% !important;
+    }
+
+    /* Transformar linhas em cards horizontais */
+    table.responsive-table tbody tr {
+        display: inline-block !important;
+        vertical-align: top !important;
+        width: 280px !important; /* Largura fixa para cada card */
+        margin-right: 15px !important;
+        margin-bottom: 10px !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 4px !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+        background-color: #fff !important;
+        flex: 0 0 auto !important;
+    }
+
+    /* Configurar células para exibição com labels */
+    table.responsive-table td {
+        display: flex !important;
+        align-items: center !important;
+        border: none !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        position: relative !important;
+        padding: 10px !important;
+        padding-left: 120px !important;
+        text-align: left !important;
+        min-height: 30px !important;
+        white-space: normal !important; /* Permitir quebra de texto dentro das células */
+    }
+
+    /* Adicionar labels antes do conteúdo */
+    table.responsive-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 100px;
+        font-weight: 500;
+        color: #616161;
+    }
+
+    /* Remover borda da última célula */
+    table.responsive-table td:last-child {
+        border-bottom: none !important;
+    }
+
+    /* Estilo para a mensagem "Sem registro" */
+    table.responsive-table tr.no-results td {
+        display: block !important;
+        text-align: center !important;
+        padding: 15px !important;
+        width: 100% !important;
+    }
+
+    table.responsive-table tr.no-results td:before {
+        display: none !important;
+    }
+
+    /* Ajustes para a tabela de detalhes do pedido */
+    #tableDetalheVenda.responsive-table td:before {
+        width: 80px;
+        min-width: 80px;
+    }
+
+    /* Ajustes para botões em mobile */
+    table.responsive-table td.action-buttons {
+        justify-content: flex-start !important;
+    }
+
+    /* Garantir que a tabela responsiva seja exibida corretamente */
+    table.responsive-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+    }
+
+    /* Indicador de rolagem horizontal */
+    .table-container:after {
+        content: "⟺ Deslize para ver mais pedidos";
+        display: block;
+        text-align: center;
+        padding: 5px;
+        color: #757575;
+        font-size: 12px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255,255,255,0.8);
+    }
+}
+
+/* Estilos adicionais para garantir que a tabela responsiva funcione corretamente */
+@media only screen and (max-width: 600px) {
+    /* Garantir que a tabela responsiva seja exibida corretamente */
+    table.responsive-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+    }
+
+    /* Garantir que o cabeçalho seja escondido */
+    table.responsive-table thead {
+        display: none !important;
+    }
+
+    /* Garantir que as linhas sejam exibidas como blocos */
+    table.responsive-table tbody tr {
+        display: block !important;
+        border: 1px solid #e0e0e0 !important;
+        margin-bottom: 16px !important;
+        border-radius: 4px !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Garantir que as células sejam exibidas como flex */
+    table.responsive-table tbody td {
+        display: flex !important;
+        align-items: center !important;
+        border: none !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        position: relative !important;
+        padding: 10px !important;
+        padding-left: 120px !important;
+        text-align: left !important;
+        min-height: 30px !important;
+    }
+
+    /* Garantir que os labels sejam exibidos corretamente */
+    table.responsive-table tbody td:before {
+        content: attr(data-label) !important;
+        position: absolute !important;
+        left: 10px !important;
+        width: 100px !important;
+        font-weight: 500 !important;
+        color: #616161 !important;
+    }
+
+    /* Garantir que a última célula não tenha borda inferior */
+    table.responsive-table tbody td:last-child {
+        border-bottom: none !important;
+    }
+}

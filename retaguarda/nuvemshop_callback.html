@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NuvemShop Callback</title>
+    <script>
+        // Função executada quando a página carrega
+        window.onload = function() {
+            // Obter os parâmetros da URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var authData = urlParams.get('auth_data');
+            var sessionId = urlParams.get('session_id');
+            
+            if (authData && sessionId) {
+                try {
+                    // Decodificar os dados (base64 se necessário)
+                    var decodedData = decodeURIComponent(escape(window.atob(authData)));
+                    var data = JSON.parse(decodedData);
+                    
+                    // Adicionar o ID da sessão aos dados
+                    data.session_id = sessionId;
+                    
+                    // Enviar os dados para a janela principal
+                    window.opener.postMessage(JSON.stringify(data), '*');
+                    
+                    // Exibir mensagem de sucesso
+                    document.getElementById('status').innerHTML = 'Autenticação concluída com sucesso! Esta janela será fechada automaticamente.';
+                    document.getElementById('status').className = 'success';
+                    
+                    // Fechar a janela após 3 segundos
+                    setTimeout(function() {
+                        window.close();
+                    }, 3000);
+                } catch (e) {
+                    document.getElementById('status').innerHTML = 'Erro ao processar dados: ' + e.message;
+                    document.getElementById('status').className = 'error';
+                    console.error('Erro ao processar dados:', e);
+                }
+            } else {
+                document.getElementById('status').innerHTML = 'Dados de autenticação não encontrados na URL.';
+                document.getElementById('status').className = 'error';
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Processando Autenticação NuvemShop</h2>
+    <p id="status">Processando dados de autenticação...</p>
+</body>
+</html>

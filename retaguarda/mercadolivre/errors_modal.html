@@ -1,0 +1,166 @@
+<!-- Modal para mostrar erros detalhados do ML -->
+<div id="modal_erros_ml_detalhado" class="modal modal-fixed-footer" style="width: 90%; height: 85%;">
+    <div class="modal-content">
+        <h4><i class="material-icons left red-text">error_outline</i>Problemas na Exportação para Mercado Livre</h4>
+        
+        <div class="row">
+            <div class="col s12">
+                <p>Foram encontrados alguns problemas que impedem a exportação. Veja os detalhes e soluções abaixo:</p>
+            </div>
+        </div>
+        
+        <!-- Resumo dos problemas -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card blue-grey lighten-5">
+                    <div class="card-content">
+                        <span class="card-title">📊 Resumo</span>
+                        <div class="row">
+                            <div class="col s4">
+                                <div class="center-align">
+                                    <h5 class="red-text" id="ml_erros_count">0</h5>
+                                    <p>Erros Críticos</p>
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="center-align">
+                                    <h5 class="orange-text" id="ml_warnings_count">0</h5>
+                                    <p>Avisos</p>
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="center-align">
+                                    <h5 class="green-text" id="ml_fixable_count">0</h5>
+                                    <p>Auto-corrigíveis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lista de problemas -->
+        <div class="row">
+            <div class="col s12">
+                <div id="ml_problemas_detalhados"></div>
+            </div>
+        </div>
+        
+        <!-- Seção de debug (colapsável) -->
+        <div class="row">
+            <div class="col s12">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">bug_report</i>
+                            Informações Técnicas (Debug)
+                        </div>
+                        <div class="collapsible-body">
+                            <div id="ml_debug_info"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-grey btn-flat">Fechar</a>
+        <a href="#!" id="btn_tentar_novamente_ml" class="waves-effect waves-blue btn blue">
+            <i class="material-icons left">refresh</i>Tentar Novamente
+        </a>
+    </div>
+</div>
+
+<style>
+.ml-problema-card {
+    margin-bottom: 15px;
+    border-left: 4px solid;
+}
+
+.ml-problema-error {
+    border-left-color: #f44336;
+    background-color: #ffebee;
+}
+
+.ml-problema-warning {
+    border-left-color: #ff9800;
+    background-color: #fff3e0;
+}
+
+.ml-problema-info {
+    border-left-color: #2196f3;
+    background-color: #e3f2fd;
+}
+
+.ml-problema-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ml-problema-icon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.ml-problema-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.ml-problema-source {
+    font-size: 11px;
+    background-color: rgba(0,0,0,0.1);
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.ml-problema-description {
+    margin: 10px 0;
+    color: #666;
+}
+
+.ml-problema-solution {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #4caf50;
+    margin: 10px 0;
+}
+
+.ml-problema-original {
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.ml-auto-fixable {
+    background-color: #e8f5e8;
+    color: #2e7d32;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.ml-priority-high {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+.ml-priority-medium {
+    color: #f57c00;
+}
+
+.ml-priority-low {
+    color: #388e3c;
+}
+</style>

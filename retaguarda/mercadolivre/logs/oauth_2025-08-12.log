@@ -1,0 +1,16 @@
+[2025-08-12 05:00:11] [INFO] Callback OAuth recebido | Data: {"code":"TG-689aae3682a8ca00014525a7-672292267","state":"0q0hwtm5uybiunk55oalqid"}
+[2025-08-12 05:00:11] [INFO] Código de autorização recebido | Data: {"code":"TG-689aae3...","state":"0q0hwtm5uybiunk55oalqid"}
+[2025-08-12 05:00:11] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/249fafeab50f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-12 05:00:12] [DEBUG] Resposta da API de token | Data: {"http_code":200,"response":{"access_token":"APP_USR-5844322531555319-081123-bb532418249a9995e568ed7fd4cbbdd1-672292267","token_type":"Bearer","expires_in":21600,"scope":"offline_access read urn:global:admin:users:\/read-only urn:global:admin:users:\/read-write urn:ml:vis:comunication:\/read-write urn:ml:vis:publish-sync:\/read-write write","user_id":672292267,"refresh_token":"TG-689aae382b5b010001df149a-672292267"}}
+[2025-08-12 05:00:12] [INFO] Token obtido com sucesso | Data: {"user_id":672292267,"expires_in":21600,"has_refresh_token":true}
+[2025-08-12 05:00:12] [INFO] Token salvo no banco com sucesso
+[2025-08-12 05:00:12] [INFO] Token validado com sucesso | Data: {"user_nickname":"SR20241007151544","user_email":"ondydept@gmail.com"}
+[2025-08-12 05:00:12] [INFO] Dados do usuário obtidos | Data: {"nickname":"SR20241007151544","email":"ondydept@gmail.com"}
+[2025-08-12 17:31:37] [INFO] Callback OAuth recebido | Data: {"code":"TG-689b5e54a293cf000127498d-672292267","state":"ufbmx9nd16jc3lxetzum"}
+[2025-08-12 17:31:37] [INFO] Código de autorização recebido | Data: {"code":"TG-689b5e5...","state":"ufbmx9nd16jc3lxetzum"}
+[2025-08-12 17:31:37] [DEBUG] Solicitando token de acesso | Data: {"redirect_uri_used":"https:\/\/249fafeab50f.ngrok-free.app\/retaguarda\/mercadolivre\/auth\/callback.php","client_id":"5844322531555319"}
+[2025-08-12 17:31:37] [DEBUG] Resposta da API de token | Data: {"http_code":200,"response":{"access_token":"APP_USR-5844322531555319-081211-a48ce437545b261dfa70e85968578b5f-672292267","token_type":"Bearer","expires_in":21600,"scope":"offline_access read urn:global:admin:users:\/read-only urn:global:admin:users:\/read-write urn:ml:vis:comunication:\/read-write urn:ml:vis:publish-sync:\/read-write write","user_id":672292267,"refresh_token":"TG-689b5e566568290001d2ce69-672292267"}}
+[2025-08-12 17:31:37] [INFO] Token obtido com sucesso | Data: {"user_id":672292267,"expires_in":21600,"has_refresh_token":true}
+[2025-08-12 17:31:38] [INFO] Token salvo no banco com sucesso
+[2025-08-12 17:31:38] [INFO] Token validado com sucesso | Data: {"user_nickname":"SR20241007151544","user_email":"ondydept@gmail.com"}
+[2025-08-12 17:31:38] [INFO] Dados do usuário obtidos | Data: {"nickname":"SR20241007151544","email":"ondydept@gmail.com"}

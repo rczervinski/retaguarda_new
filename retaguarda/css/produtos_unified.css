@@ -1,0 +1,406 @@
+/*
+ * Arquivo CSS unificado para a página de produtos
+ */
+
+/* Estilos gerais */
+body {
+  line-height: 1.6;
+}
+
+.container {
+  width: 95%;
+  max-width: 1280px;
+}
+
+
+/* Melhorias na área de pesquisa */
+#produto_principal .row:first-of-type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#produto_principal .input-field {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Botões de ação na área principal */
+#produto_principal .btn-floating {
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+#produto_principal .btn-floating:hover {
+  transform: scale(1.1);
+}
+
+/* Container da tabela com altura fixa e barra de rolagem */
+.table-container {
+  height: 600px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 0;
+}
+
+/* Estilização da barra de rolagem */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* Ajustes para o card que contém a tabela */
+.card {
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  padding: 0 !important;
+}
+
+/* Tabela de produtos */
+#userTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  background-color: #fff;
+  margin: 0;
+}
+
+/* Cabeçalho da tabela - CORRIGIDO */
+#userTable thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f5f5f5;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  height: 48px; /* Altura fixa para o cabeçalho */
+  display: table-header-group; /* Garante que o cabeçalho seja exibido corretamente */
+  width: 100%; /* Garante que o cabeçalho ocupe toda a largura da tabela */
+}
+
+#userTable thead tr {
+  display: table-row;
+  width: 100%;
+  height: 48px; /* Altura fixa para a linha do cabeçalho */
+  background-color: #f5f5f5;
+  border: none;
+}
+
+#userTable th {
+  background-color: #f5f5f5;
+  color: #212121;
+  padding: 0 10px; /* Remover padding vertical para controlar altura pela linha */
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border: none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  height: 48px; /* Garante que todas as células do cabeçalho tenham a mesma altura */
+  display: table-cell; /* Garante que as células sejam exibidas corretamente */
+  line-height: 48px; /* Linha igual à altura para centralizar verticalmente */
+}
+
+/* Garantir que o cabeçalho ocupe toda a altura da caixa */
+.table-container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Células da tabela */
+#userTable td {
+  padding: 12px 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0f0f0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: #424242;
+  font-size: 14px;
+}
+
+/* Linhas da tabela */
+#userTable tbody tr {
+  transition: background-color 0.2s;
+  border: none;
+}
+
+#userTable tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Estilização dos checkboxes */
+#userTable [type="checkbox"] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  user-select: none;
+}
+
+#userTable [type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Botões de ação */
+#userTable .btn-floating {
+  background-color: #7986cb;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#userTable .btn-floating:hover {
+  background-color: #5c6bc0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px) scale(1.05);
+}
+
+#userTable .btn-floating i {
+  line-height: 36px;
+  font-size: 18px;
+}
+
+/* Estilo para quando não há dados */
+#userTable tbody tr td[colspan] {
+  padding: 30px;
+  text-align: center;
+  color: #9e9e9e;
+  font-style: italic;
+}
+
+/* Estilos para paginação */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.pagination li {
+  margin: 0 2px;
+}
+
+.pagination li a {
+  color: #444;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  line-height: 30px;
+  border-radius: 0px;
+  transition: background-color 0.2s;
+}
+
+.pagination li.active a {
+  background-color: #2196F3;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.table-container {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Responsividade para desktop e tablets */
+@media only screen and (max-width: 992px) {
+  .table-container {
+    height: 500px;
+  }
+
+  #userTable th,
+  #userTable td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Responsividade para tablets pequenos */
+@media only screen and (max-width: 768px) {
+  #userTable {
+    white-space: nowrap;
+  }
+
+  .table-container {
+    height: 450px;
+    overflow-x: auto;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+
+  .table-container {
+    height: auto;
+    max-height: 80vh;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+
+  /* Esconder cabeçalho da tabela em mobile */
+  #userTable thead {
+    display: none;
+  }
+
+  /* Configuração para rolagem horizontal */
+  #userTable tbody {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch; /* Para melhor rolagem em iOS */
+    width: max-content;
+    min-width: 100%;
+  }
+
+  /* Transformar linhas em cards horizontais */
+  #userTable tbody tr {
+    display: inline-block;
+    vertical-align: top;
+    width: 280px; /* Largura fixa para cada card */
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background-color: #fff;
+    flex: 0 0 auto;
+  }
+
+  /* Estilo para células dentro dos cards */
+  #userTable td {
+    display: flex;
+    padding: 10px !important;
+    text-align: left !important;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal; /* Permitir quebra de texto dentro das células */
+  }
+
+  /* Adicionar labels antes do conteúdo */
+  #userTable td:before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #616161;
+    width: 100px;
+    min-width: 100px;
+    margin-right: 10px;
+  }
+
+  /* Remover borda da última célula */
+  #userTable td:last-child {
+    border-bottom: none;
+  }
+
+  /* Estilo para a mensagem "Sem registro" */
+  #userTable tr.no-results {
+    width: 100%;
+    text-align: center;
+  }
+
+  #userTable tr.no-results td {
+    display: block;
+    text-align: center !important;
+    padding: 15px !important;
+  }
+
+  #userTable tr.no-results td:before {
+    display: none;
+  }
+
+  /* Ajustes para checkboxes e botões em mobile */
+  #userTable td:first-child {
+    justify-content: flex-start;
+  }
+
+  #userTable td:last-child {
+    justify-content: flex-start;
+  }
+
+  #userTable .btn-floating {
+    margin-left: 0;
+  }
+
+  /* Indicador de rolagem horizontal */
+  .table-container:after {
+    content: "⟺ Deslize para ver mais produtos";
+    display: block;
+    text-align: center;
+    padding: 5px;
+    color: #757575;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,0.8);
+  }
+}
+
+/* Ajustes específicos para telas muito pequenas */
+@media only screen and (max-width: 320px) {
+  #userTable tbody tr {
+    width: 260px; /* Cards um pouco menores */
+  }
+
+  #userTable td:before {
+    width: 80px;
+    min-width: 80px;
+  }
+}
+
+/* Animação de carregamento para a tabela */
+@keyframes tableLoad {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#userTable {
+  animation: tableLoad 0.5s ease-out forwards;
+}
+
+/* Indicador de carregamento */
+#loading {
+  display: none;
+  text-align: center;
+  margin: 20px 0;
+}

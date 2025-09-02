@@ -1,0 +1,192 @@
+<!-- Modal para preview da exportação ML -->
+<div id="modal_export_ml" class="modal modal-fixed-footer" style="width: 80%; height: 80%;">
+    <div class="modal-content">
+        <h4><i class="material-icons left">shopping_bag</i>Exportar para Mercado Livre</h4>
+        
+        <!-- Informações do produto -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card blue-grey lighten-5">
+                    <div class="card-content">
+                        <span class="card-title">📦 Produto</span>
+                        <p><strong>Título:</strong> <span id="ml_produto_titulo"></span></p>
+                        <p><strong>Preço:</strong> R$ <span id="ml_produto_preco"></span></p>
+                        <p><strong>Estoque:</strong> <span id="ml_produto_estoque"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Predição de categoria -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">🧠 Categoria Sugerida pelo ML</span>
+                        <p><strong>Categoria:</strong> <span id="ml_categoria_nome"></span></p>
+                        <p><strong>ID:</strong> <span id="ml_categoria_id"></span></p>
+                        <p><strong>Confiança:</strong> <span id="ml_categoria_confianca"></span>%</p>
+                        
+                        <!-- Outras opções de categoria -->
+                        <div id="ml_outras_categorias" style="margin-top: 15px;">
+                            <p><strong>Outras opções:</strong></p>
+                            <div id="ml_categorias_lista"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Requisitos e problemas -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">⚠️ Requisitos da Categoria</span>
+                        <div id="ml_requisitos_lista"></div>
+                        <div id="ml_problemas_lista"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Campos obrigatórios editáveis -->
+        <div class="row" id="ml_campos_obrigatorios" style="display: none;">
+            <div class="col s12">
+                <div class="card orange lighten-5">
+                    <div class="card-content">
+                        <span class="card-title">📝 Campos Obrigatórios</span>
+                        <p><small>Preencha os campos abaixo para esta categoria:</small></p>
+                        <div id="ml_campos_form"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campos específicos da categoria -->
+        <div class="row" id="ml_category_fields">
+            <div class="col s12">
+                <div class="card blue lighten-5">
+                    <div class="card-content">
+                        <span class="card-title">🎯 Campos da Categoria</span>
+                        <p id="ml_category_message"><small>Carregando informações da categoria...</small></p>
+                        <div id="ml_category_fields_container">
+                            <!-- Campos serão carregados dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Configurações de preço -->
+        <div class="row" id="ml_config_preco" style="display: none;">
+            <div class="col s12">
+                <div class="card blue lighten-5">
+                    <div class="card-content">
+                        <span class="card-title">💰 Ajustar Preço</span>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="ml_preco_ajustado" type="number" step="0.01" min="0">
+                                <label for="ml_preco_ajustado">Preço para ML</label>
+                                <span class="helper-text" id="ml_preco_helper"></span>
+                            </div>
+                            <div class="col s6" style="padding-top: 20px;">
+                                <p><strong>Preço atual:</strong> R$ <span id="ml_preco_atual"></span></p>
+                                <p id="ml_preco_requisito"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Atributos que serão enviados (preview) -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">🏷️ Resumo dos Atributos</span>
+                        <div id="ml_atributos_preview"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-grey btn-flat">Cancelar</a>
+        <a href="#!" id="btn_confirmar_export_ml" class="waves-effect waves-green btn green">
+            <i class="material-icons left">cloud_upload</i>Exportar
+        </a>
+    </div>
+</div>
+
+<style>
+.ml-issue-error {
+    color: #f44336;
+    background-color: #ffebee;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.ml-issue-warning {
+    color: #ff9800;
+    background-color: #fff3e0;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.ml-category-option {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ml-category-option:hover {
+    background-color: #f5f5f5;
+}
+
+.ml-category-option.selected {
+    border-color: #2196F3;
+    background-color: #e3f2fd;
+}
+
+.ml-attribute {
+    background-color: #e8f5e8;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.ml-campo-obrigatorio {
+    margin-bottom: 15px;
+}
+
+.ml-campo-obrigatorio label {
+    font-weight: bold;
+    color: #ff6f00;
+}
+
+.ml-campo-obrigatorio input, .ml-campo-obrigatorio select {
+    border: 2px solid #ff6f00 !important;
+}
+
+.ml-campo-obrigatorio input:focus, .ml-campo-obrigatorio select:focus {
+    border-color: #e65100 !important;
+    box-shadow: 0 1px 0 0 #e65100 !important;
+}
+
+.ml-preco-invalido {
+    border-color: #f44336 !important;
+}
+
+.ml-preco-valido {
+    border-color: #4caf50 !important;
+}
+</style>
