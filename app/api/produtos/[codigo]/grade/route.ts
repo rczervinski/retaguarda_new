@@ -103,9 +103,12 @@ export async function POST(
     }
     
     const body = await request.json();
+    console.log('📦 Body recebido:', JSON.stringify(body, null, 2));
+    
     const { variantes } = body;
     
     if (!Array.isArray(variantes)) {
+      console.log('❌ Variantes não é um array:', typeof variantes);
       return NextResponse.json(
         { success: false, error: 'Variantes devem ser um array' },
         { status: 400 }
@@ -232,8 +235,14 @@ export async function POST(
     
   } catch (error) {
     console.error('❌ Erro ao salvar grade:', error);
+    console.error('❌ Stack trace:', error instanceof Error ? error.stack : 'No stack trace');
+    
     return NextResponse.json(
-      { success: false, error: 'Erro interno do servidor' },
+      { 
+        success: false, 
+        error: 'Erro interno do servidor',
+        details: error instanceof Error ? error.message : 'Erro desconhecido'
+      },
       { status: 500 }
     );
   }

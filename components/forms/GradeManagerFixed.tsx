@@ -264,7 +264,7 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
       setBuscandoProduto(true);
       console.log('🔍 Buscando produto por GTIN:', gtin);
       
-      const response = await fetch(`/api/produtos/buscar-por-gtin?gtin=${gtin}`);
+      const response = await fetch(`/api/produtos/buscar-gtin?gtin=${gtin}`);
       const data = await response.json();
       
       console.log('📦 Resposta da API:', data);

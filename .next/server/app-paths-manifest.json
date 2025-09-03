@@ -1,1 +1,6 @@
-{}
+{
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js",
+  "/cadastros/produtos/page": "app/cadastros/produtos/page.js",
+  "/cadastros/produtos/[codigo]/editar/page": "app/cadastros/produtos/[codigo]/editar/page.js"
+}
