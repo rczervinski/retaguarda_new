@@ -1,10 +1,1 @@
-{
-  "/api/produtos/[codigo]/route": "app/api/produtos/[codigo]/route.js",
-  "/api/categorias/route": "app/api/categorias/route.js",
-  "/api/fornecedores/route": "app/api/fornecedores/route.js",
-  "/api/produtos/[codigo]/imagens/route": "app/api/produtos/[codigo]/imagens/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/cadastros/produtos/page": "app/cadastros/produtos/page.js",
-  "/page": "app/page.js",
-  "/cadastros/produtos/[codigo]/editar/page": "app/cadastros/produtos/[codigo]/editar/page.js"
-}
+{}
