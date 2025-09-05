@@ -6,7 +6,9 @@ const nextConfig = {
   },
   // Configuração para Vercel
   experimental: {
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ["localhost:3000", "*.vercel.app"]
+    }
   },
 }
 

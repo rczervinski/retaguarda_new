@@ -21,9 +21,10 @@ async function getMeta(client: any, table: string) {
 
 export async function GET(
   _req: NextRequest,
-  { params }: { params: { codigo: string } }
+  context: { params: Promise<{ codigo: string }> }
 ) {
   const inicio = Date.now();
+  const params = await context.params;
   const codigoInterno = params.codigo;
   let client;
   try {
@@ -100,9 +101,10 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { codigo: string } }
+  context: { params: Promise<{ codigo: string }> }
 ) {
   const inicio = Date.now();
+  const params = await context.params;
   const codigoInterno = params.codigo;
   let client;
 

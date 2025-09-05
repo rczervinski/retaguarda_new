@@ -10,10 +10,11 @@ const pool = new Pool({
 // GET /api/produtos/[codigo] - Buscar produto específico por código
 export async function GET(
   request: NextRequest,
-  { params }: { params: { codigo: string } }
+  context: { params: Promise<{ codigo: string }> }
 ) {
   console.log('🔍 API /api/produtos/[codigo] GET chamada - PRODUTO ESPECÍFICO');
   console.log('⏰ Timestamp:', new Date().toISOString());
+  const params = await context.params;
   console.log('📝 Código recebido:', params.codigo);
   
   try {
@@ -201,10 +202,11 @@ export async function GET(
 // PUT /api/produtos/[codigo] - Atualizar produto específico
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { codigo: string } }
+  context: { params: Promise<{ codigo: string }> }
 ) {
   console.log('✏️ API /api/produtos/[codigo] PUT chamada - ATUALIZAR PRODUTO');
   console.log('⏰ Timestamp:', new Date().toISOString());
+  const params = await context.params;
   console.log('📝 Código recebido:', params.codigo);
   
   try {
