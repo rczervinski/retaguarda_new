@@ -1,6 +1,12 @@
+// ADIÇÕES PRINCIPAIS:
+// 1. Impede submit / reload (Enter, submit bubbling).
+// 2. Usa origin absoluto pra evitar porta errada.
+// 3. Só atualiza estado após sucesso (remove otimista que podia "sumir").
+// 4. Recarrega grade após POST confirmando inserção.
+
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -60,7 +66,7 @@ function ModalEditarVariante({ variante, isOpen, onClose, onSave }: ModalEditarP
       <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-lg font-semibold">Editar Variante</h3>
-          <Button variant="outline" size="sm" onClick={onClose}>
+            <Button type="button" variant="outline" size="sm" onClick={onClose}>
             <X className="h-4 w-4" />
           </Button>
         </div>
@@ -195,10 +201,10 @@ function ModalEditarVariante({ variante, isOpen, onClose, onSave }: ModalEditarP
 
           {/* Botões de ação */}
           <div className="flex justify-end gap-2 pt-4">
-            <Button variant="outline" onClick={onClose}>
+            <Button type="button" variant="outline" onClick={onClose}>
               Cancelar
             </Button>
-            <Button onClick={handleSave}>
+            <Button type="button" onClick={handleSave}>
               <Save className="h-4 w-4 mr-2" />
               Salvar
             </Button>
@@ -241,14 +247,47 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
     }
   }, [message]);
 
+  // PREVENIR SUBMIT / RELOAD
+  useEffect(() => {
+    const preventSubmit = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target && target.closest('[data-grade-manager="true"]')) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+    document.addEventListener('submit', preventSubmit, true);
+    return () => document.removeEventListener('submit', preventSubmit, true);
+  }, []);
+
+  const baseFetch = useCallback((path: string, init?: RequestInit) => {
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    return fetch(`${origin}${path}`, init);
+  }, []);
+
   const carregarGrade = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/produtos/${codigoInterno}/grade`);
+      const response = await baseFetch(`/api/produtos/${codigoInterno}/grade`);
       const data = await response.json();
-      
       if (data.success) {
-        setVariantes(data.grade || []);
+        const normalizadas = (data.grade || []).map((v: any) => ({
+          codigo_gtin: v.codigo_gtin || '',
+          descricao: v.descricao || v.nome || '',
+            variacao: v.variacao || '',
+          caracteristica: v.caracteristica || '',
+          preco_venda: parseFloat(v.preco_venda) || 0,
+          estoque: parseInt(v.estoque) || 0,
+          dimensoes: {
+            comprimento: parseFloat(v.comprimento) || 0,
+            largura: parseFloat(v.largura) || 0,
+            altura: parseFloat(v.altura) || 0,
+            peso: parseFloat(v.peso) || 0
+          }
+        }));
+        setVariantes(normalizadas);
+      } else {
+        console.warn('⚠️ Falha carregar grade:', data.error);
       }
     } catch (error) {
       console.error('❌ Erro ao carregar grade:', error);
@@ -257,18 +296,57 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
     }
   };
 
+  // Função de teste para debug
+  const testarAPIs = async () => {
+    console.log('🧪 Testando APIs...');
+    
+    // Teste 1: API de busca por GTIN
+    try {
+      console.log('🔍 Testando busca por GTIN...');
+      const response1 = await fetch('/api/produtos/buscar-gtin?gtin=1234567890');
+      console.log('✅ Busca GTIN - Status:', response1.status);
+      const data1 = await response1.json();
+      console.log('✅ Busca GTIN - Data:', data1);
+    } catch (error) {
+      console.error('❌ Erro na busca GTIN:', error);
+    }
+    
+    // Teste 2: API de teste
+    try {
+      console.log('🔍 Testando API de teste...');
+      const response2 = await fetch('/api/produtos/test');
+      console.log('✅ Test API - Status:', response2.status);
+      const data2 = await response2.json();
+      console.log('✅ Test API - Data:', data2);
+    } catch (error) {
+      console.error('❌ Erro na API de teste:', error);
+    }
+    
+    // Teste 3: API de grade (GET)
+    try {
+      console.log('🔍 Testando GET da grade...');
+      const response3 = await fetch(`/api/produtos/${codigoInterno}/grade`);
+      console.log('✅ Grade GET - Status:', response3.status);
+      const data3 = await response3.json();
+      console.log('✅ Grade GET - Data:', data3);
+    } catch (error) {
+      console.error('❌ Erro no GET da grade:', error);
+    }
+  };
+
   const buscarProdutoPorGtin = async (gtin: string) => {
-    if (!gtin || gtin.length < 8) return;
+    if (!gtin || gtin.length < 1) {
+      console.log('🚫 buscarProdutoPorGtin abortado: length < 1');
+      return;
+    }
     
     try {
       setBuscandoProduto(true);
       console.log('🔍 Buscando produto por GTIN:', gtin);
-      
       const response = await fetch(`/api/produtos/buscar-gtin?gtin=${gtin}`);
       const data = await response.json();
       
       console.log('📦 Resposta da API:', data);
-      
       if (data.success && data.data) {
         setNovaVariante(prev => ({
           ...prev,
@@ -287,20 +365,28 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
   };
 
   const handleGtinChange = (gtin: string) => {
+    console.log('🔍 handleGtinChange chamado com GTIN:', gtin);
     setNovaVariante(prev => ({ ...prev, codigo_gtin: gtin, descricao: '' }));
-    
-    // Limpar timeout anterior
-    if (timeoutId) {
-      clearTimeout(timeoutId);
+
+    // Validar tamanho máximo (ex: aceitar até 15)
+    if (gtin.length > 15) {
+      console.log('⚠️ GTIN > 15 chars, ignorando excesso');
+      return;
     }
-    
-    // Definir novo timeout para buscar após 1 segundo sem digitar
+
+    // Limpa timeout anterior
+    if (timeoutId) clearTimeout(timeoutId);
+
+    // Busca após 400ms se houver pelo menos 1 char (permitir 1..15)
     const newTimeoutId = setTimeout(() => {
-      if (gtin && gtin.length >= 8) {
+      console.log('⏰ Timeout GTIN disparou. length=', gtin.length);
+      if (gtin.length >= 1) {
         buscarProdutoPorGtin(gtin);
+      } else {
+        console.log('🚫 Não busca: length < 1');
       }
-    }, 1000);
-    
+    }, 400);
+
     setTimeoutId(newTimeoutId);
   };
 
@@ -309,146 +395,119 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
       setMessage({ type: 'error', text: 'Preencha todos os campos obrigatórios' });
       return;
     }
-
-    // Verificar se GTIN já existe
-    const gtinExiste = variantes.some(v => v.codigo_gtin === novaVariante.codigo_gtin);
-    if (gtinExiste) {
-      setMessage({ type: 'error', text: 'Este GTIN já existe na grade' });
+    if (variantes.some(v => v.codigo_gtin === novaVariante.codigo_gtin)) {
+      setMessage({ type: 'error', text: 'GTIN já existe na grade' });
       return;
     }
 
-    const variante: Variante = {
-      codigo_gtin: novaVariante.codigo_gtin,
-      descricao: novaVariante.descricao || '',
-      variacao: novaVariante.variacao,
-      caracteristica: novaVariante.caracteristica,
-      preco_venda: 0,
-      estoque: 0,
-      dimensoes: { comprimento: 0, largura: 0, altura: 0, peso: 0 }
-    };
-
-    try {
-      setLoading(true);
-      
-      // Adicionar ao estado local primeiro
-      const novasVariantes = [...variantes, variante];
-      setVariantes(novasVariantes);
-      
-      // Salvar no servidor
-      const response = await fetch(`/api/produtos/${codigoInterno}/grade`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ variantes: novasVariantes }),
-      });
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        // Limpar formulário
-        setNovaVariante({
-          codigo_gtin: '',
-          descricao: '',
-          variacao: '',
-          caracteristica: ''
-        });
-        
-        setMessage({ type: 'success', text: 'Variante adicionada com sucesso!' });
-        
-        // Recarregar para sincronizar
-        setTimeout(() => carregarGrade(), 500);
-      } else {
-        // Reverter se deu erro
-        setVariantes(variantes);
-        setMessage({ type: 'error', text: data.error || 'Erro ao salvar variante' });
+    const novaLista = [
+      ...variantes,
+      {
+        codigo_gtin: novaVariante.codigo_gtin,
+        descricao: novaVariante.descricao || '',
+        variacao: novaVariante.variacao,
+        caracteristica: novaVariante.caracteristica,
+        preco_venda: 0,
+        estoque: 0,
+        dimensoes: { comprimento: 0, largura: 0, altura: 0, peso: 0 }
       }
-    } catch (error) {
-      // Reverter se deu erro
-      setVariantes(variantes);
-      console.error('❌ Erro ao salvar variante:', error);
-      setMessage({ type: 'error', text: 'Erro ao salvar variante' });
-    } finally {
-      setLoading(false);
-    }
-  };
+    ];
 
-  const abrirModalEdicao = (variante: Variante) => {
-    setVarianteEditando(variante);
-    setModalEditarAberto(true);
-  };
-
-  const salvarEdicaoVariante = async (varianteEditada: Variante) => {
     try {
       setLoading(true);
-      
-      // Atualizar estado local
-      const variantesAtualizadas = variantes.map(v => 
-        v.codigo_gtin === varianteEditada.codigo_gtin ? varianteEditada : v
-      );
-      setVariantes(variantesAtualizadas);
-      
-      // Salvar no servidor
-      const response = await fetch(`/api/produtos/${codigoInterno}/grade`, {
+      const resp = await baseFetch(`/api/produtos/${codigoInterno}/grade`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ variantes: variantesAtualizadas }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ variantes: novaLista })
       });
-      
-      const data = await response.json();
-      
+      const data = await resp.json();
       if (data.success) {
-        setMessage({ type: 'success', text: 'Variante atualizada!' });
-        setTimeout(() => carregarGrade(), 500);
+        setMessage({ type: 'success', text: 'Variante salva' });
+        // Limpa form
+        setNovaVariante({ codigo_gtin: '', descricao: '', variacao: '', caracteristica: '' });
+        await carregarGrade();
       } else {
         setMessage({ type: 'error', text: data.error || 'Erro ao salvar' });
       }
-    } catch (error) {
-      console.error('❌ Erro ao salvar edição:', error);
+    } catch (e) {
+      console.error(e);
       setMessage({ type: 'error', text: 'Erro ao salvar' });
     } finally {
       setLoading(false);
     }
   };
 
-  const removerVariante = async (index: number) => {
-    if (confirm('Tem certeza que deseja remover esta variante?')) {
-      try {
-        setLoading(true);
-        
-        const variantesAtualizadas = variantes.filter((_, i) => i !== index);
-        setVariantes(variantesAtualizadas);
-        
-        // Salvar no servidor
-        const response = await fetch(`/api/produtos/${codigoInterno}/grade`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ variantes: variantesAtualizadas }),
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-          setMessage({ type: 'success', text: 'Variante removida!' });
-          setTimeout(() => carregarGrade(), 500);
-        } else {
-          setMessage({ type: 'error', text: data.error || 'Erro ao remover' });
-        }
-      } catch (error) {
-        console.error('❌ Erro ao remover variante:', error);
-        setMessage({ type: 'error', text: 'Erro ao remover' });
-      } finally {
-        setLoading(false);
+  // Abrir modal de edição (faltando após últimos merges)
+  const abrirModalEdicao = (variante: Variante) => {
+    const segura: Variante = {
+      ...variante,
+      dimensoes: variante.dimensoes || { comprimento: 0, largura: 0, altura: 0, peso: 0 }
+    };
+    setVarianteEditando(segura);
+    setModalEditarAberto(true);
+  };
+
+  const salvarEdicaoVariante = async (varianteEditada: Variante) => {
+    const novaLista = variantes.map(v => v.codigo_gtin === varianteEditada.codigo_gtin ? varianteEditada : v);
+    try {
+      setLoading(true);
+      const resp = await baseFetch(`/api/produtos/${codigoInterno}/grade`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ variantes: novaLista })
+      });
+      const data = await resp.json();
+      if (data.success) {
+        setMessage({ type: 'success', text: 'Variante atualizada' });
+        await carregarGrade();
+      } else {
+        setMessage({ type: 'error', text: data.error || 'Erro ao atualizar' });
       }
+    } catch (e) {
+      console.error(e);
+      setMessage({ type: 'error', text: 'Erro ao atualizar' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const removerVariante = async (index: number) => {
+    if (!confirm('Remover esta variante?')) return;
+    const novaLista = variantes.filter((_, i) => i !== index);
+    try {
+      setLoading(true);
+      const resp = await baseFetch(`/api/produtos/${codigoInterno}/grade`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ variantes: novaLista })
+      });
+      const data = await resp.json();
+      if (data.success) {
+        setMessage({ type: 'success', text: 'Variante removida' });
+        await carregarGrade();
+      } else {
+        setMessage({ type: 'error', text: data.error || 'Erro ao remover' });
+      }
+    } catch (e) {
+      console.error(e);
+      setMessage({ type: 'error', text: 'Erro ao remover' });
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className={`space-y-6 ${className}`}>
+    <div
+      data-grade-manager="true"
+      className={`space-y-6 ${className}`}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }}
+      onClick={(e) => { e.stopPropagation(); }}
+    >
       {/* Mensagens */}
       {message && (
         <Alert className={message.type === 'success' ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'}>
@@ -478,7 +537,7 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
                   placeholder="Digite o GTIN"
                 />
                 {buscandoProduto && (
-                  <Button variant="outline" size="icon" disabled>
+                  <Button type="button" variant="outline" size="icon" disabled>
                     <Search className="h-4 w-4 animate-spin" />
                   </Button>
                 )}
@@ -516,8 +575,11 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
             </div>
           </div>
           
-          <div className="flex justify-end mt-4">
-            <Button onClick={adicionarVariante} disabled={loading}>
+          <div className="flex justify-end gap-2 mt-4">
+            <Button type="button" onClick={testarAPIs} variant="outline">
+              🧪 Testar APIs
+            </Button>
+            <Button type="button" onClick={adicionarVariante} disabled={loading}>
               <Plus className="h-4 w-4 mr-2" />
               {loading ? 'Adicionando...' : 'Adicionar Variante'}
             </Button>
@@ -560,18 +622,20 @@ export default function GradeManagerFixed({ codigoInterno, className = '' }: Gra
                   
                   <div className="flex gap-2 ml-4">
                     <Button
+                      type="button"
                       variant="outline"
                       size="sm"
-                      onClick={() => abrirModalEdicao(variante)}
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); abrirModalEdicao(variante) }}
                       disabled={loading}
                     >
                       <Edit className="h-4 w-4 mr-1" />
                       Editar
                     </Button>
                     <Button
+                      type="button"
                       variant="outline"
                       size="sm"
-                      onClick={() => removerVariante(index)}
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); removerVariante(index) }}
                       className="text-red-600 hover:text-red-700"
                       disabled={loading}
                     >

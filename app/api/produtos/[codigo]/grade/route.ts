@@ -1,297 +1,302 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Pool } from 'pg';
 
-// Configuração da conexão com PostgreSQL
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 
-// GET /api/produtos/[codigo]/grade - Buscar grade completa do produto
+async function getMeta(client: any, table: string) {
+  const exists = await client.query(
+    `SELECT 1 FROM information_schema.tables WHERE table_name = $1`,
+    [table.toLowerCase()]
+  );
+  if (!exists.rowCount) return { exists: false, columns: [] as string[] };
+  const cols = await client.query(
+    `SELECT column_name FROM information_schema.columns WHERE table_name = $1`,
+    [table.toLowerCase()]
+  );
+  return { exists: true, columns: cols.rows.map((r: any) => r.column_name) as string[] };
+}
+
 export async function GET(
-  request: NextRequest,
+  _req: NextRequest,
   { params }: { params: { codigo: string } }
 ) {
+  const inicio = Date.now();
+  const codigoInterno = params.codigo;
+  let client;
   try {
-    console.log('🔍 API GET /api/produtos/[codigo]/grade chamada');
-    console.log('📝 Código do produto:', params.codigo);
-    
-    const codigoInterno = parseInt(params.codigo);
-    
-    if (isNaN(codigoInterno)) {
-      return NextResponse.json(
-        { success: false, error: 'Código do produto inválido' },
-        { status: 400 }
-      );
+    client = await pool.connect();
+    const table = 'produtos_gd';
+    const meta = await getMeta(client, table);
+    if (!meta.exists) {
+      return NextResponse.json({ success: true, grade: [], count: 0, aviso: 'Tabela produtos_gd inexistente' });
     }
-    
-    // Buscar todas as variantes da grade com informações completas
-    const query = `
+
+    const cols = meta.columns;
+    const has = (c: string) => cols.includes(c);
+
+    if (!has('codigo_interno')) {
+      return NextResponse.json({ success: true, grade: [], count: 0, aviso: 'Sem coluna codigo_interno' });
+    }
+
+    // Query enriquecida reintroduzida
+    const selectParts: string[] = [];
+    selectParts.push('gd.codigo');
+    if (has('codigo_interno')) selectParts.push('gd.codigo_interno');
+    if (has('codigo_gtin')) selectParts.push('gd.codigo_gtin');
+    if (has('nome')) selectParts.push('gd.nome');
+    if (has('variacao')) selectParts.push('gd.variacao');
+    if (has('caracteristica')) selectParts.push('gd.caracteristica');
+
+    const sql = `
       SELECT 
-        gd.codigo,
-        gd.codigo_gtin,
-        gd.nome as descricao,
-        gd.variacao,
-        gd.caracteristica,
-        gd.codigo_interno,
-        COALESCE(ib.preco_venda, '0') as preco_venda,
-        COALESCE(ou.qtde, '0') as estoque,
-        COALESCE(ou.comprimento, '0') as comprimento,
-        COALESCE(ou.largura, '0') as largura,
-        COALESCE(ou.altura, '0') as altura,
-        COALESCE(ou.peso, '0') as peso
-      FROM produtos_gd gd
+        ${selectParts.join(', ')},
+        COALESCE(pib.preco_venda, '0') AS preco_venda,
+        COALESCE(pib.preco_compra, '0') AS preco_compra,
+        COALESCE(pou.qtde, '0') AS estoque,
+        COALESCE(pou.comprimento, '0') AS comprimento,
+        COALESCE(pou.largura, '0') AS largura,
+        COALESCE(pou.altura, '0') AS altura,
+        COALESCE(pou.peso, '0') AS peso
+      FROM ${table} gd
       LEFT JOIN produtos p ON gd.codigo_gtin = p.codigo_gtin
-      LEFT JOIN produtos_ib ib ON p.codigo_interno = ib.codigo_interno  
-      LEFT JOIN produtos_ou ou ON p.codigo_interno = ou.codigo_interno
+      LEFT JOIN produtos_ib pib ON p.codigo_interno = pib.codigo_interno
+      LEFT JOIN produtos_ou pou ON p.codigo_interno = pou.codigo_interno
       WHERE gd.codigo_interno = $1
-      ORDER BY gd.codigo
+        AND (gd.nome IS NULL OR gd.nome <> 'composicao')
+      ORDER BY gd.codigo_gtin NULLS LAST, gd.variacao NULLS LAST, gd.caracteristica NULLS LAST
     `;
-    
-    console.log('🔍 Executando consulta da grade...');
-    const result = await pool.query(query, [codigoInterno]);
-    
-    console.log('📊 Variantes encontradas:', result.rows.length);
-    
-    // Formatar dados das variantes
-    const variantes = result.rows.map(row => ({
-      codigo: row.codigo.toString(),
-      codigo_gtin: row.codigo_gtin,
-      descricao: row.descricao,
-      variacao: row.variacao,
-      caracteristica: row.caracteristica,
-      preco_venda: parseFloat(row.preco_venda || '0'),
-      estoque: parseInt(row.estoque || '0'),
-      dimensoes: {
-        comprimento: parseFloat(row.comprimento || '0'),
-        largura: parseFloat(row.largura || '0'),
-        altura: parseFloat(row.altura || '0'),
-        peso: parseFloat(row.peso || '0')
-      }
+    const result = await client.query(sql, [codigoInterno]);
+
+    const grade = result.rows.map((r: any) => ({
+      codigo: r.codigo,
+      codigo_interno: r.codigo_interno,
+      codigo_gtin: r.codigo_gtin || '',
+      descricao: r.nome || '',
+      variacao: r.variacao || '',
+      caracteristica: r.caracteristica || '',
+      preco_venda: parseFloat(r.preco_venda) || 0,
+      estoque: parseInt(r.estoque) || 0,
+      comprimento: parseFloat(r.comprimento) || 0,
+      largura: parseFloat(r.largura) || 0,
+      altura: parseFloat(r.altura) || 0,
+      peso: parseFloat(r.peso) || 0
     }));
-    
+
+    return NextResponse.json({ success: true, grade, count: grade.length, meta_cols: cols, tempo_ms: Date.now() - inicio });
+  } catch (e: any) {
+    console.error('🔴 [GRADE GET] ERRO:', e);
     return NextResponse.json({
-      success: true,
-      grade: variantes
-    });
-    
-  } catch (error) {
-    console.error('❌ Erro ao buscar grade:', error);
-    return NextResponse.json(
-      { success: false, error: 'Erro interno do servidor' },
-      { status: 500 }
-    );
+      success: false,
+      error: 'Erro ao carregar grade',
+      detalhe: e.message
+    }, { status: 500 });
+  } finally {
+    client?.release();
   }
 }
 
-// POST /api/produtos/[codigo]/grade - Salvar/atualizar grade do produto
 export async function POST(
   request: NextRequest,
   { params }: { params: { codigo: string } }
 ) {
-  try {
-    console.log('💾 API POST /api/produtos/[codigo]/grade chamada');
-    console.log('📝 Código do produto:', params.codigo);
-    
-    const codigoInterno = parseInt(params.codigo);
-    
-    if (isNaN(codigoInterno)) {
-      return NextResponse.json(
-        { success: false, error: 'Código do produto inválido' },
-        { status: 400 }
-      );
-    }
-    
-    const body = await request.json();
-    console.log('📦 Body recebido:', JSON.stringify(body, null, 2));
-    
-    const { variantes } = body;
-    
-    if (!Array.isArray(variantes)) {
-      console.log('❌ Variantes não é um array:', typeof variantes);
-      return NextResponse.json(
-        { success: false, error: 'Variantes devem ser um array' },
-        { status: 400 }
-      );
-    }
-    
-    console.log('📦 Variantes a processar:', variantes.length);
-    
-    // Iniciar transação
-    const client = await pool.connect();
-    
-    try {
-      await client.query('BEGIN');
-      
-      // 1. Deletar grade existente
-      console.log('🗑️ Removendo grade existente...');
-      await client.query(
-        'DELETE FROM produtos_gd WHERE codigo_interno = $1',
-        [codigoInterno]
-      );
-      
-      // 2. Inserir novas variantes na grade
-      for (const variante of variantes) {
-        console.log('➕ Inserindo variante:', variante.codigo_gtin);
-        
-        await client.query(`
-          INSERT INTO produtos_gd (
-            codigo_gtin, 
-            nome, 
-            variacao, 
-            caracteristica, 
-            codigo_interno
-          ) VALUES ($1, $2, $3, $4, $5)
-        `, [
-          variante.codigo_gtin,
-          variante.descricao || '',
-          variante.variacao || '',
-          variante.caracteristica || '',
-          codigoInterno
-        ]);
-        
-        // 3. Atualizar preço se fornecido
-        if (variante.preco_venda && variante.preco_venda > 0) {
-          const produtoResult = await client.query(
-            'SELECT codigo_interno FROM produtos WHERE codigo_gtin = $1',
-            [variante.codigo_gtin]
-          );
-          
-          if (produtoResult.rows.length > 0) {
-            const codigoInternoVariante = produtoResult.rows[0].codigo_interno;
-            
-            await client.query(`
-              UPDATE produtos_ib 
-              SET preco_venda = $1 
-              WHERE codigo_interno = $2
-            `, [variante.preco_venda.toString(), codigoInternoVariante]);
-          }
-        }
-        
-        // 4. Atualizar estoque e dimensões se fornecidos
-        if (variante.estoque !== undefined || variante.dimensoes) {
-          const produtoResult = await client.query(
-            'SELECT codigo_interno FROM produtos WHERE codigo_gtin = $1',
-            [variante.codigo_gtin]
-          );
-          
-          if (produtoResult.rows.length > 0) {
-            const codigoInternoVariante = produtoResult.rows[0].codigo_interno;
-            
-            const updates = [];
-            const values = [];
-            let paramCount = 1;
-            
-            if (variante.estoque !== undefined) {
-              updates.push(`qtde = $${paramCount++}`);
-              values.push(variante.estoque.toString());
-            }
-            
-            if (variante.dimensoes) {
-              if (variante.dimensoes.comprimento !== undefined) {
-                updates.push(`comprimento = $${paramCount++}`);
-                values.push(variante.dimensoes.comprimento.toString());
-              }
-              if (variante.dimensoes.largura !== undefined) {
-                updates.push(`largura = $${paramCount++}`);
-                values.push(variante.dimensoes.largura.toString());
-              }
-              if (variante.dimensoes.altura !== undefined) {
-                updates.push(`altura = $${paramCount++}`);
-                values.push(variante.dimensoes.altura.toString());
-              }
-              if (variante.dimensoes.peso !== undefined) {
-                updates.push(`peso = $${paramCount++}`);
-                values.push(variante.dimensoes.peso.toString());
-              }
-            }
-            
-            if (updates.length > 0) {
-              values.push(codigoInternoVariante);
-              await client.query(`
-                UPDATE produtos_ou 
-                SET ${updates.join(', ')} 
-                WHERE codigo_interno = $${paramCount}
-              `, values);
-            }
-          }
-        }
-      }
-      
-      await client.query('COMMIT');
-      console.log('✅ Grade salva com sucesso');
-      
-      return NextResponse.json({
-        success: true,
-        message: 'Grade salva com sucesso'
-      });
-      
-    } catch (error) {
-      await client.query('ROLLBACK');
-      throw error;
-    } finally {
-      client.release();
-    }
-    
-  } catch (error) {
-    console.error('❌ Erro ao salvar grade:', error);
-    console.error('❌ Stack trace:', error instanceof Error ? error.stack : 'No stack trace');
-    
-    return NextResponse.json(
-      { 
-        success: false, 
-        error: 'Erro interno do servidor',
-        details: error instanceof Error ? error.message : 'Erro desconhecido'
-      },
-      { status: 500 }
-    );
-  }
-}
+  const inicio = Date.now();
+  const codigoInterno = params.codigo;
+  let client;
 
-// DELETE /api/produtos/[codigo]/grade - Remover variante específica da grade
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { codigo: string } }
-) {
+  let body: any;
   try {
-    console.log('🗑️ API DELETE /api/produtos/[codigo]/grade chamada');
-    
-    const { searchParams } = new URL(request.url);
-    const codigoGrade = searchParams.get('codigo');
-    
-    if (!codigoGrade) {
-      return NextResponse.json(
-        { success: false, error: 'Código da variante é obrigatório' },
-        { status: 400 }
-      );
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ success: false, error: 'JSON inválido' }, { status: 400 });
+  }
+
+  const variantes = Array.isArray(body?.variantes) ? body.variantes : [];
+  if (!variantes.length) {
+    return NextResponse.json({ success: false, error: 'Nenhuma variante enviada' }, { status: 400 });
+  }
+
+  try {
+    client = await pool.connect();
+    const table = 'produtos_gd';
+    const meta = await getMeta(client, table);
+    if (!meta.exists) {
+      return NextResponse.json({ success: false, error: `Tabela ${table} não encontrada` }, { status: 500 });
     }
-    
-    console.log('🗑️ Removendo variante código:', codigoGrade);
-    
-    const result = await pool.query(
-      'DELETE FROM produtos_gd WHERE codigo = $1',
-      [parseInt(codigoGrade)]
+    const cols = meta.columns;
+    const has = (c: string) => cols.includes(c);
+
+    if (!has('codigo_interno')) {
+      return NextResponse.json({ success: false, error: 'Tabela sem coluna codigo_interno' }, { status: 500 });
+    }
+    if (!has('codigo')) {
+      return NextResponse.json({ success: false, error: 'Tabela sem coluna codigo (PK)' }, { status: 500 });
+    }
+    if (!has('nome')) {
+      return NextResponse.json({ success: false, error: 'Tabela sem coluna nome (descrição)' }, { status: 500 });
+    }
+
+    // Preparar limpeza
+    await client.query('BEGIN');
+
+    // Remover linhas anteriores da grade (preserva composicao)
+    await client.query(
+      `DELETE FROM ${table}
+       WHERE codigo_interno = $1
+         AND (nome IS NULL OR nome <> 'composicao')`,
+      [codigoInterno]
     );
-    
-    if (result.rowCount === 0) {
-      return NextResponse.json(
-        { success: false, error: 'Variante não encontrada' },
-        { status: 404 }
-      );
+
+    // Descobrir MAX(codigo)
+    const maxRes = await client.query(`SELECT COALESCE(MAX(codigo), 0) AS max FROM ${table}`);
+    let nextCodigo = maxRes.rows[0].max + 1;
+
+    let inseridos = 0;
+    const hasGtin = has('codigo_gtin');
+    const hasVariacao = has('variacao');
+    const hasCaracteristica = has('caracteristica');
+
+    for (const raw of variantes) {
+      // Normalização
+      const codigo_gtin = (raw.codigo_gtin || '').toString().trim();
+      const nome = (raw.descricao || raw.nome || '').toString().trim();
+      const variacao = (raw.variacao || '').toString().trim();
+      const caracteristica = (raw.caracteristica || '').toString().trim();
+
+      if (!nome && !codigo_gtin) {
+        continue; // nada útil
+      }
+
+      const campos: string[] = ['codigo', 'codigo_interno', 'nome'];
+      const valores: any[] = [nextCodigo, codigoInterno, nome];
+      const placeholders: string[] = ['$1', '$2', '$3'];
+      let idx = 3;
+
+      if (hasGtin && codigo_gtin) {
+        campos.push('codigo_gtin');
+        valores.push(codigo_gtin);
+        placeholders.push(`$${++idx}`);
+      }
+      if (hasVariacao && variacao) {
+        campos.push('variacao');
+        valores.push(variacao);
+        placeholders.push(`$${++idx}`);
+      }
+      if (hasCaracteristica && caracteristica) {
+        campos.push('caracteristica');
+        valores.push(caracteristica);
+        placeholders.push(`$${++idx}`);
+      }
+
+      const sql = `
+        INSERT INTO ${table} (${campos.join(', ')})
+        VALUES (${placeholders.join(', ')})
+      `;
+      try {
+        await client.query(sql, valores);
+        inseridos++;
+        nextCodigo++;
+      } catch (e: any) {
+        console.error('❌ Erro inserindo variante:', e.message, { sql, valores });
+        throw e;
+      }
     }
-    
-    console.log('✅ Variante removida com sucesso');
-    
+
+    await client.query('COMMIT');
+
+    // Persistência de preço / estoque / dimensões (se existirem registros)
+    // produtos_ib (preço)
+    // produtos_ou (qtde + dimensões)
+    // Aqui faremos UPSERT simples (delete + insert) para simplificar
+    const variantesValidas = variantes.filter((v: any) => v.codigo_gtin);
+    if (variantesValidas.length) {
+      // Carrega mapa GTIN -> codigo_interno variante
+  const gtins = variantesValidas.map((v: any) => v.codigo_gtin);
+      const mapVar = await pool.query(
+        `SELECT codigo_interno, codigo_gtin FROM produtos WHERE codigo_gtin = ANY($1::text[])`,
+        [gtins]
+      );
+      const gtinToCodigoInterno: Record<string,string> = {};
+      mapVar.rows.forEach(r => { if (r.codigo_gtin) gtinToCodigoInterno[r.codigo_gtin] = r.codigo_interno; });
+
+      // Preços
+      try {
+        await pool.query('BEGIN');
+        for (const v of variantesValidas) {
+          const gtin = (v.codigo_gtin || '').toString();
+          const codVar = gtinToCodigoInterno[gtin];
+          if (!codVar) continue;
+          const preco = parseFloat(v.preco_venda) || 0;
+          await pool.query(
+            `INSERT INTO produtos_ib (codigo_interno, preco_venda)
+             VALUES ($1,$2)
+             ON CONFLICT (codigo_interno) DO UPDATE SET preco_venda = EXCLUDED.preco_venda`,
+            [codVar, preco]
+          );
+        }
+        await pool.query('COMMIT');
+      } catch (e: any) {
+        await pool.query('ROLLBACK');
+        console.warn('⚠️ Falha ao sincronizar preços (prossegue mesmo assim):', e.message);
+      }
+
+      // Estoque e dimensões
+      try {
+        await pool.query('BEGIN');
+        for (const v of variantesValidas) {
+          const gtin = (v.codigo_gtin || '').toString();
+          const codVar = gtinToCodigoInterno[gtin];
+          if (!codVar) continue;
+          await pool.query(
+            `INSERT INTO produtos_ou (codigo_interno, qtde, comprimento, largura, altura, peso)
+             VALUES ($1,$2,$3,$4,$5,$6,$7)
+             ON CONFLICT (codigo_interno) DO UPDATE SET
+               qtde = EXCLUDED.qtde,
+               comprimento = EXCLUDED.comprimento,
+               largura = EXCLUDED.largura,
+               altura = EXCLUDED.altura,
+               peso = EXCLUDED.peso`,
+            [
+              codVar,
+              parseInt(v.estoque) || 0,
+              parseFloat(v?.dimensoes?.comprimento) || 0,
+              parseFloat(v?.dimensoes?.largura) || 0,
+              parseFloat(v?.dimensoes?.altura) || 0,
+              parseFloat(v?.dimensoes?.peso) || 0
+            ]
+          );
+        }
+        await pool.query('COMMIT');
+      } catch (e: any) {
+        await pool.query('ROLLBACK');
+        console.warn('⚠️ Falha ao sincronizar estoque/dimensões (prossegue):', e.message);
+      }
+    }
+
+    // Conferência
+    const confer = await pool.query(
+      `SELECT COUNT(*)::int AS c FROM ${table} WHERE codigo_interno = $1 AND (nome IS NULL OR nome <> 'composicao')`,
+      [codigoInterno]
+    );
+
     return NextResponse.json({
       success: true,
-      message: 'Variante removida com sucesso'
+      message: 'Grade salva',
+      inseridos,
+      conferido_total: confer.rows[0].c,
+      tempo_ms: Date.now() - inicio
     });
-    
-  } catch (error) {
-    console.error('❌ Erro ao remover variante:', error);
-    return NextResponse.json(
-      { success: false, error: 'Erro interno do servidor' },
-      { status: 500 }
-    );
+  } catch (e: any) {
+    if (client) await client.query('ROLLBACK').catch(() => {});
+    console.error('🔴 [GRADE POST] ERRO:', e);
+    return NextResponse.json({
+      success: false,
+      error: 'Erro ao salvar grade',
+      detalhe: e.message
+    }, { status: 500 });
+  } finally {
+    client?.release();
   }
 }
