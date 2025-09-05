@@ -468,9 +468,8 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                     </div>
                     <Button
                       variant="outline"
-                      size="sm"
                       onClick={() => removerVariante(index)}
-                      className="text-red-600 hover:text-red-700"
+                      className="h-8 text-sm text-red-600 hover:text-red-700"
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -482,7 +481,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                       <Input
                         value={variante.variacao}
                         onChange={(e) => atualizarVariante(index, 'variacao', e.target.value)}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                     <div>
@@ -490,7 +489,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                       <Input
                         value={variante.caracteristica}
                         onChange={(e) => atualizarVariante(index, 'caracteristica', e.target.value)}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                     <div>
@@ -500,7 +499,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                         step="0.01"
                         value={variante.preco_venda}
                         onChange={(e) => atualizarVariante(index, 'preco_venda', parseFloat(e.target.value) || 0)}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                     <div>
@@ -509,7 +508,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                         type="number"
                         value={variante.estoque}
                         onChange={(e) => atualizarVariante(index, 'estoque', parseInt(e.target.value) || 0)}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                   </div>
@@ -525,7 +524,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                         step="0.01"
                         value={variante.dimensoes.comprimento}
                         onChange={(e) => atualizarVariante(index, 'dimensoes', { comprimento: parseFloat(e.target.value) || 0 })}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                     <div>
@@ -535,7 +534,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                         step="0.01"
                         value={variante.dimensoes.largura}
                         onChange={(e) => atualizarVariante(index, 'dimensoes', { largura: parseFloat(e.target.value) || 0 })}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                     <div>
@@ -545,7 +544,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                         step="0.01"
                         value={variante.dimensoes.altura}
                         onChange={(e) => atualizarVariante(index, 'dimensoes', { altura: parseFloat(e.target.value) || 0 })}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                     <div>
@@ -555,7 +554,7 @@ export default function GradeManager({ codigoInterno, className = '' }: GradeMan
                         step="0.01"
                         value={variante.dimensoes.peso}
                         onChange={(e) => atualizarVariante(index, 'dimensoes', { peso: parseFloat(e.target.value) || 0 })}
-                        size="sm"
+                        className="h-8 text-sm"
                       />
                     </div>
                   </div>

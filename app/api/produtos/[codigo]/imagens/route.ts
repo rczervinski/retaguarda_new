@@ -38,14 +38,16 @@ async function listImages(codigo: string) {
   }
 }
 
-export async function GET(_req: NextRequest, { params }: { params: { codigo: string } }) {
+export async function GET(_req: NextRequest, context: { params: Promise<{ codigo: string }> }) {
   await ensureDir()
+  const params = await context.params
   const imgs = await listImages(params.codigo)
   return NextResponse.json({ success: true, imagens: imgs })
 }
 
 // Upload nova imagem (multipart/form-data) campos: file, crop (json opcional com {x,y,w,h,scale})
-export async function POST(req: NextRequest, { params }: { params: { codigo: string } }) {
+export async function POST(req: NextRequest, context: { params: Promise<{ codigo: string }> }) {
+  const params = await context.params
   const codigo = params.codigo
   await ensureDir()
   try {
@@ -100,7 +102,8 @@ export async function POST(req: NextRequest, { params }: { params: { codigo: str
 }
 
 // Reordenar: body { ordem: ["200.png","200_2.png", ...] }
-export async function PUT(req: NextRequest, { params }: { params: { codigo: string } }) {
+export async function PUT(req: NextRequest, context: { params: Promise<{ codigo: string }> }) {
+  const params = await context.params
   const codigo = params.codigo
   await ensureDir()
   try {
@@ -154,7 +157,8 @@ export async function PUT(req: NextRequest, { params }: { params: { codigo: stri
 }
 
 // DELETE ?nome=200_2.png
-export async function DELETE(req: NextRequest, { params }: { params: { codigo: string } }) {
+export async function DELETE(req: NextRequest, context: { params: Promise<{ codigo: string }> }) {
+  const params = await context.params
   const codigo = params.codigo
   await ensureDir()
   const { searchParams } = new URL(req.url)
@@ -207,7 +211,8 @@ export async function DELETE(req: NextRequest, { params }: { params: { codigo: s
 export const dynamic = 'force-dynamic'
 
 // PATCH: swap positions { acao:'swap', from: number, to: number }
-export async function PATCH(req: NextRequest, { params }: { params: { codigo: string } }) {
+export async function PATCH(req: NextRequest, context: { params: Promise<{ codigo: string }> }) {
+  const params = await context.params
   const codigo = params.codigo
   console.log('🔄 API SWAP DEBUG - Recebendo PATCH para código:', codigo)
   await ensureDir()

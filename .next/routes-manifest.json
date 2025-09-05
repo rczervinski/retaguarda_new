@@ -1,1 +1,194 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"}],"headers":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/produtos/[codigo]",
+      "regex": "^/api/produtos/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcodigo": "nxtPcodigo"
+      },
+      "namedRegex": "^/api/produtos/(?<nxtPcodigo>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/produtos/[codigo]/grade",
+      "regex": "^/api/produtos/([^/]+?)/grade(?:/)?$",
+      "routeKeys": {
+        "nxtPcodigo": "nxtPcodigo"
+      },
+      "namedRegex": "^/api/produtos/(?<nxtPcodigo>[^/]+?)/grade(?:/)?$"
+    },
+    {
+      "page": "/api/produtos/[codigo]/imagens",
+      "regex": "^/api/produtos/([^/]+?)/imagens(?:/)?$",
+      "routeKeys": {
+        "nxtPcodigo": "nxtPcodigo"
+      },
+      "namedRegex": "^/api/produtos/(?<nxtPcodigo>[^/]+?)/imagens(?:/)?$"
+    },
+    {
+      "page": "/cadastros/produtos/[codigo]/editar",
+      "regex": "^/cadastros/produtos/([^/]+?)/editar(?:/)?$",
+      "routeKeys": {
+        "nxtPcodigo": "nxtPcodigo"
+      },
+      "namedRegex": "^/cadastros/produtos/(?<nxtPcodigo>[^/]+?)/editar(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/cadastros/clientes",
+      "regex": "^/cadastros/clientes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/clientes(?:/)?$"
+    },
+    {
+      "page": "/cadastros/fornecedores",
+      "regex": "^/cadastros/fornecedores(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/fornecedores(?:/)?$"
+    },
+    {
+      "page": "/cadastros/produtos",
+      "regex": "^/cadastros/produtos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/produtos(?:/)?$"
+    },
+    {
+      "page": "/cadastros/produtos/novo",
+      "regex": "^/cadastros/produtos/novo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/produtos/novo(?:/)?$"
+    },
+    {
+      "page": "/cadastros/promocoes",
+      "regex": "^/cadastros/promocoes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/promocoes(?:/)?$"
+    },
+    {
+      "page": "/cadastros/transportadoras",
+      "regex": "^/cadastros/transportadoras(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/transportadoras(?:/)?$"
+    },
+    {
+      "page": "/cadastros/usuarios",
+      "regex": "^/cadastros/usuarios(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/usuarios(?:/)?$"
+    },
+    {
+      "page": "/cadastros/vendedores",
+      "regex": "^/cadastros/vendedores(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cadastros/vendedores(?:/)?$"
+    },
+    {
+      "page": "/exemplo-grade",
+      "regex": "^/exemplo\\-grade(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/exemplo\\-grade(?:/)?$"
+    },
+    {
+      "page": "/financeiro/contas-pagar",
+      "regex": "^/financeiro/contas\\-pagar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/financeiro/contas\\-pagar(?:/)?$"
+    },
+    {
+      "page": "/financeiro/contas-receber",
+      "regex": "^/financeiro/contas\\-receber(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/financeiro/contas\\-receber(?:/)?$"
+    },
+    {
+      "page": "/integracoes/mercadolivre",
+      "regex": "^/integracoes/mercadolivre(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/integracoes/mercadolivre(?:/)?$"
+    },
+    {
+      "page": "/integracoes/nuvemshop",
+      "regex": "^/integracoes/nuvemshop(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/integracoes/nuvemshop(?:/)?$"
+    },
+    {
+      "page": "/nfe",
+      "regex": "^/nfe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/nfe(?:/)?$"
+    },
+    {
+      "page": "/orcamento",
+      "regex": "^/orcamento(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/orcamento(?:/)?$"
+    },
+    {
+      "page": "/relatorios/ecommerce",
+      "regex": "^/relatorios/ecommerce(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/relatorios/ecommerce(?:/)?$"
+    },
+    {
+      "page": "/relatorios/produtos",
+      "regex": "^/relatorios/produtos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/relatorios/produtos(?:/)?$"
+    },
+    {
+      "page": "/vendas-online",
+      "regex": "^/vendas\\-online(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/vendas\\-online(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
